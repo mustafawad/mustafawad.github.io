@@ -79,7 +79,18 @@
   /* ---------- hero ---------- */
   .hero{ max-width:960px; margin:0 auto; padding:76px 24px 56px; animation:fadeUp .6s ease both; }
   @keyframes fadeUp{ from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:translateY(0); } }
-  .prompt{ font-family:var(--mono); color:var(--cyan); font-size:13px; margin-bottom:14px; letter-spacing:.02em; }
+  .hero-top{ display:flex; align-items:center; gap:22px; margin-bottom:22px; flex-wrap:wrap; }
+  .avatar{
+    width:92px; height:92px; border-radius:50%; flex-shrink:0;
+    background:linear-gradient(135deg, var(--cyan), #142E63);
+    color:#F4F8FE;
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--mono); font-weight:600; font-size:30px; letter-spacing:.02em;
+    box-shadow:var(--shadow-hover);
+  }
+  /* To use a real photo instead: replace the .avatar div with
+     <img class="avatar" src="headshot.jpg" alt="Mustafa Awad" style="object-fit:cover;"> */
+  .prompt{ font-family:var(--mono); color:var(--cyan); font-size:13px; letter-spacing:.02em; }
   .prompt span{ color:var(--text-2); }
   h1{
     font-family:var(--sans); font-weight:700;
@@ -198,11 +209,16 @@
   </div>
 
   <header class="hero">
+    <div class="hero-top">
+      <div class="avatar" aria-hidden="true">MA</div>
+      <div class="prompt">Senior System Administrator</div>
+    </div>
     <h1>Mustafa Awad — 12+ years in <em>Microsoft infrastructure &amp; cloud identity</em>, now building on Linux &amp; AI.</h1>
     <p class="hero-sub">
       Senior IT System Administrator and former Microsoft 365 Identity Support
       Engineer. I run enterprise Windows and cloud infrastructure end to end —
-      and I'm currently building a self-hosted AI environment on Ubuntu.
+      and I'm currently building a self-hosted AI environment on Ubuntu for
+      practical enterprise use.
     </p>
 
     <div class="metrics">
