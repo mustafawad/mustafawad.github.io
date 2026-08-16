@@ -1,590 +1,1176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mustafa Awad | Senior System Administrator</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mustafa Awad | Senior System Administrator &amp; Cloud Identity Engineer</title>
+  <meta name="description" content="Senior System Administrator specializing in Microsoft Entra ID, Azure Cloud, Windows Server, Virtualization, and On-Premises Linux AI Infrastructure.">
+  <meta name="author" content="Mustafa Awad">
 
-  :root{
-    --bg-0:#EEF2FA;
-    --bg-1:#FFFFFF;
-    --bg-2:#F5F8FD;
-    --bg-3:#E7F0FB;
-    --line:#DCE5F3;
-    --text-0:#0F2440;
-    --text-1:#4A6485;
-    --text-2:#7086A6;
-    --cyan:#215FCC;
-    --cyan-dim: rgba(33,95,204,0.08);
-    --amber:#1E3A8A;
-    --amber-dim: rgba(30,58,138,0.07);
-    --shadow: 0 1px 2px rgba(16,35,63,0.04), 0 6px 16px rgba(16,35,63,0.06);
-    --shadow-hover: 0 2px 6px rgba(16,35,63,0.06), 0 10px 24px rgba(16,35,63,0.10);
-    --mono: 'IBM Plex Mono', ui-monospace, monospace;
-    --sans: 'IBM Plex Sans', system-ui, sans-serif;
-  }
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mustafa Awad | Senior System Administrator">
+  <meta property="og:description" content="Senior System Administrator — Windows, Azure, Identity &amp; On-Prem AI Infrastructure.">
 
-  *{ box-sizing:border-box; margin:0; padding:0; }
-  html{ scroll-behavior:smooth; }
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior:auto; }
-    *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
-  }
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%232563EB'/><text x='50%' y='56%' dominant-baseline='middle' text-anchor='middle' fill='%23FFFFFF' font-family='monospace' font-weight='bold' font-size='46'>MA</text></svg>">
 
-  body{
-    background:
-      radial-gradient(ellipse 900px 500px at 15% -8%, rgba(33,95,204,0.06), transparent 60%),
-      radial-gradient(ellipse 700px 500px at 100% 0%, rgba(255,255,255,0.8), transparent 55%),
-      var(--bg-0);
-    color:var(--text-0);
-    font-family:var(--sans);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-  a{ color:inherit; }
-  ::selection{ background:var(--cyan-dim); color:var(--text-0); }
-  :focus-visible{ outline:2px solid var(--cyan); outline-offset:3px; border-radius:2px; }
-  ul{ list-style:none; }
+  <style>
+    :root {
+      --bg-base: #080D1A;
+      --bg-surface: #0E172B;
+      --bg-elevated: #15223C;
+      --bg-card: rgba(18, 29, 51, 0.75);
+      
+      --line: rgba(148, 163, 184, 0.12);
+      --line-hover: rgba(56, 189, 248, 0.35);
+      
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --text-dim: #64748B;
+      
+      --primary: #38BDF8;
+      --primary-glow: rgba(56, 189, 248, 0.15);
+      --accent: #6366F1;
+      --accent-glow: rgba(99, 102, 241, 0.15);
+      --success: #10B981;
 
-  /* ---------- top nav ---------- */
-  .topnav{
-    position:sticky; top:0; z-index:50;
-    display:flex; justify-content:center;
-    padding:16px 24px;
-  }
-  .topnav-inner{
-    width:100%; max-width:920px;
-    background:rgba(255,255,255,0.86);
-    backdrop-filter:blur(10px);
-    border:1px solid var(--line);
-    border-radius:999px;
-    box-shadow:var(--shadow);
-    padding:10px 12px 10px 18px;
-    display:flex; align-items:center; justify-content:space-between;
-    gap:10px;
-  }
-  .brand{
-    font-family:var(--mono); font-weight:600; font-size:14px;
-    width:34px; height:34px; border-radius:50%;
-    background:linear-gradient(135deg, var(--cyan), #142E63);
-    color:#fff; display:flex; align-items:center; justify-content:center;
-    flex-shrink:0;
-  }
-  .topnav nav{ display:flex; gap:4px; flex-wrap:wrap; }
-  .topnav nav a{
-    text-decoration:none; color:var(--text-1); font-size:13.5px; font-weight:500;
-    padding:7px 12px; border-radius:999px; transition:background .15s ease, color .15s ease;
-    white-space:nowrap;
-  }
-  .topnav nav a:hover{ background:var(--cyan-dim); color:var(--cyan); }
-  @media (max-width:700px){ .topnav nav{ display:none; } }
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
 
-  /* ---------- hero ---------- */
-  .hero{ max-width:1000px; margin:0 auto; padding:56px 24px 0; animation:fadeUp .6s ease both; }
-  @keyframes fadeUp{ from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:translateY(0); } }
-  .hero-grid{ display:grid; grid-template-columns:220px 1fr; gap:48px; align-items:center; }
-  @media (max-width:760px){ .hero-grid{ grid-template-columns:1fr; text-align:center; } }
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+      --shadow-lg: 0 12px 32px -4px rgba(0, 0, 0, 0.5);
+    }
 
-  .photo-wrap{ position:relative; width:200px; margin:0 auto; }
-  .avatar{
-    width:200px; height:200px; border-radius:28px;
-    background:linear-gradient(135deg, var(--cyan), #142E63);
-    color:#F4F8FE;
-    display:flex; align-items:center; justify-content:center;
-    font-family:var(--mono); font-weight:600; font-size:56px; letter-spacing:.02em;
-    box-shadow:var(--shadow-hover);
-  }
-  /* To use a real photo instead: replace the .avatar div with
-     <img class="avatar" src="headshot.jpg" alt="Mustafa Awad" style="object-fit:cover;"> */
-  .badge{
-    position:absolute; background:var(--bg-1); border:1px solid var(--line);
-    border-radius:12px; padding:8px 12px; box-shadow:var(--shadow-hover);
-    font-family:var(--mono); text-align:left; line-height:1.2;
-  }
-  .badge-val{ font-size:15px; font-weight:600; color:var(--cyan); }
-  .badge-label{ font-size:10px; color:var(--text-2); text-transform:uppercase; letter-spacing:.04em; }
-  .badge.b1{ top:-14px; right:-26px; }
-  .badge.b2{ bottom:-14px; left:-26px; }
-  @media (max-width:760px){
-    .badge.b1{ right:calc(50% - 128px); }
-    .badge.b2{ left:calc(50% - 128px); }
-  }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
 
-  .eyebrow{
-    display:inline-block; font-family:var(--mono); font-size:12px; font-weight:600;
-    color:var(--cyan); background:var(--cyan-dim); padding:5px 12px; border-radius:999px;
-    margin-bottom:16px; letter-spacing:.03em;
-  }
-  h1{ font-size:clamp(30px, 4.4vw, 42px); font-weight:700; line-height:1.15; letter-spacing:-0.01em; margin-bottom:8px; }
-  .role-line{ font-size:16px; color:var(--cyan); font-weight:600; margin-bottom:16px; }
-  .hero-sub{ font-size:15.5px; color:var(--text-1); max-width:60ch; margin-bottom:24px; }
-  @media (max-width:760px){ .hero-sub{ margin-left:auto; margin-right:auto; } }
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      position: relative;
+    }
 
-  .cta-row{ display:flex; gap:12px; flex-wrap:wrap; margin-bottom:20px; }
-  @media (max-width:760px){ .cta-row{ justify-content:center; } }
-  .btn{
-    font-size:14px; font-weight:600; padding:11px 20px; border-radius:8px;
-    text-decoration:none; transition:transform .15s ease, box-shadow .15s ease;
-    display:inline-flex; align-items:center; gap:6px;
-  }
-  .btn-primary{ background:var(--cyan); color:#fff; box-shadow:var(--shadow); }
-  .btn-primary:hover{ transform:translateY(-1px); box-shadow:var(--shadow-hover); }
-  .btn-ghost{ background:var(--bg-1); color:var(--text-0); border:1px solid var(--line); box-shadow:var(--shadow); }
-  .btn-ghost:hover{ transform:translateY(-1px); box-shadow:var(--shadow-hover); }
+    /* Ambient background glows */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -15%;
+      left: 10%;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-  .social-row{ display:flex; gap:16px; flex-wrap:wrap; }
-  @media (max-width:760px){ .social-row{ justify-content:center; } }
-  .social-row a{ font-family:var(--mono); font-size:12.5px; color:var(--text-2); text-decoration:none; transition:color .15s ease; }
-  .social-row a:hover{ color:var(--cyan); }
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: 10%;
+      right: 5%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.07) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-  /* ---------- stats strip ---------- */
-  .stats-strip{ background:var(--bg-1); border-top:1px solid var(--line); border-bottom:1px solid var(--line); margin-top:48px; }
-  .stats-inner{
-    max-width:1000px; margin:0 auto; padding:32px 24px;
-    display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; text-align:center;
-  }
-  @media (max-width:600px){ .stats-inner{ grid-template-columns:1fr 1fr; } }
-  .stat-val{ font-family:var(--mono); font-size:26px; font-weight:600; color:var(--cyan); }
-  .stat-label{ font-size:12px; color:var(--text-2); margin-top:4px; text-transform:uppercase; letter-spacing:.04em; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
 
-  /* ---------- section shell ---------- */
-  section{ max-width:1000px; margin:0 auto; padding:68px 24px; }
-  .section-head{ text-align:center; max-width:640px; margin:0 auto 40px; }
-  .section-eyebrow{ font-family:var(--mono); font-size:12px; color:var(--cyan); font-weight:600; letter-spacing:.04em; text-transform:uppercase; margin-bottom:8px; }
-  .section-head h2{ font-size:26px; font-weight:700; margin-bottom:10px; }
-  .section-head p{ color:var(--text-1); font-size:15px; }
+    /* ---------- Navigation ---------- */
+    .nav-wrapper {
+      position: sticky;
+      top: 16px;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      padding: 0 20px;
+    }
 
-  /* ---------- about ---------- */
-  .about-grid{ display:grid; grid-template-columns:1fr 1fr; gap:36px; }
-  @media (max-width:720px){ .about-grid{ grid-template-columns:1fr; } }
-  .about-intro{ color:var(--text-1); font-size:15.5px; max-width:64ch; margin:0 auto 36px; text-align:center; }
-  .about-intro strong{ color:var(--text-0); font-weight:600; }
-  .about-card h3{ font-size:16px; font-weight:600; margin-bottom:14px; }
-  .value-list li{
-    display:flex; gap:10px; align-items:flex-start; color:var(--text-1); font-size:14.5px;
-    padding:9px 0; border-bottom:1px solid var(--line);
-  }
-  .value-list li:last-child{ border-bottom:none; }
-  .value-list .tick{ color:var(--cyan); flex-shrink:0; margin-top:2px; }
-  .about-card p{ color:var(--text-1); font-size:14.5px; }
+    .navbar {
+      width: 100%;
+      max-width: 960px;
+      background: rgba(14, 23, 43, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px 8px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: var(--shadow-lg);
+    }
 
-  /* ---------- expertise grid ---------- */
-  .expertise-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; }
-  @media (max-width:760px){ .expertise-grid{ grid-template-columns:1fr 1fr; } }
-  @media (max-width:520px){ .expertise-grid{ grid-template-columns:1fr; } }
-  .expertise-card{
-    background:var(--bg-1); border:1px solid var(--line); border-radius:12px;
-    padding:20px; box-shadow:var(--shadow); transition:box-shadow .15s ease, transform .15s ease;
-  }
-  .expertise-card:hover{ box-shadow:var(--shadow-hover); transform:translateY(-2px); }
-  .expertise-icon{
-    width:38px; height:38px; border-radius:9px; background:var(--cyan-dim); color:var(--cyan);
-    display:flex; align-items:center; justify-content:center; margin-bottom:14px;
-  }
-  .expertise-icon svg{ width:20px; height:20px; }
-  .expertise-card h3{ font-size:15px; font-weight:600; margin-bottom:6px; }
-  .expertise-card p{ font-size:13.5px; color:var(--text-1); }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--text-main);
+    }
 
-  /* ---------- timeline ---------- */
-  .timeline{ position:relative; padding-left:28px; }
-  .timeline::before{ content:''; position:absolute; left:6px; top:6px; bottom:6px; width:2px; background:var(--line); }
-  .tl-item{ position:relative; padding-bottom:34px; }
-  .tl-item:last-child{ padding-bottom:0; }
-  .tl-dot{
-    position:absolute; left:-28px; top:4px; width:14px; height:14px; border-radius:50%;
-    background:var(--bg-1); border:2px solid var(--cyan);
-  }
-  .tl-item.current .tl-dot{ background:var(--cyan); }
-  .tl-card{
-    background:var(--bg-1); border:1px solid var(--line); border-radius:12px; padding:20px 22px;
-    box-shadow:var(--shadow);
-  }
-  .tl-head{ display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px; margin-bottom:4px; }
-  .tl-title{ font-size:16px; font-weight:600; }
-  .tl-date{ font-family:var(--mono); font-size:12px; color:var(--text-2); flex-shrink:0; }
-  .tl-company{ font-size:13.5px; color:var(--cyan); font-weight:500; margin-bottom:12px; }
-  .tl-card ul{ padding-left:0; }
-  .tl-card li{ font-size:14px; color:var(--text-1); padding-left:16px; position:relative; }
-  .tl-card li::before{ content:'—'; position:absolute; left:0; color:var(--text-2); }
-  .tl-card li + li{ margin-top:8px; }
-  .current-pill{
-    font-family:var(--mono); font-size:10.5px; font-weight:600; color:var(--cyan);
-    background:var(--cyan-dim); padding:2px 8px; border-radius:999px; margin-left:8px;
-  }
+    .brand-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+    }
 
-  /* ---------- projects ---------- */
-  .project-grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(260px,1fr)); gap:16px; }
-  .project{
-    border:1px solid var(--line); background:var(--bg-1); border-radius:12px;
-    padding:20px; text-decoration:none; color:inherit;
-    transition:border-color .15s ease, transform .15s ease, box-shadow .15s ease;
-    display:flex; flex-direction:column; gap:10px; box-shadow:var(--shadow);
-  }
-  .project:hover{ border-color:var(--cyan); transform:translateY(-2px); box-shadow:var(--shadow-hover); }
-  .project-name{ font-family:var(--mono); font-size:14.5px; font-weight:600; color:var(--text-0); }
-  .project-desc{ font-size:13.5px; color:var(--text-1); flex:1; }
-  .project-foot{ display:flex; justify-content:space-between; align-items:center; }
-  .project-lang{ font-family:var(--mono); font-size:11px; color:var(--text-2); display:flex; align-items:center; gap:6px; }
-  .lang-dot{ width:8px; height:8px; border-radius:50%; background:var(--cyan); }
-  .project-link{ font-size:12px; font-weight:600; color:var(--cyan); }
+    .nav-links {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
 
-  /* ---------- certifications ---------- */
-  .cert-grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); gap:14px; }
-  .cert{
-    border:1px solid var(--line); background:var(--bg-1); border-radius:12px;
-    padding:16px 18px; display:flex; flex-direction:column; gap:4px; box-shadow:var(--shadow);
-  }
-  .cert-icon{ width:24px; height:24px; color:var(--cyan); margin-bottom:6px; }
-  .cert-icon svg{ width:100%; height:100%; }
-  .cert-name{ font-size:14px; font-weight:600; color:var(--text-0); }
-  .cert-issuer{ font-family:var(--mono); font-size:11.5px; color:var(--cyan); }
+    .nav-links a {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 999px;
+      transition: all 0.2s ease;
+    }
 
-  /* ---------- contact CTA ---------- */
-  .contact-panel{
-    max-width:1000px; margin:0 auto 68px; padding:52px 32px;
-    background:linear-gradient(135deg, var(--bg-3), var(--bg-1));
-    border:1px solid var(--line); border-radius:20px; text-align:center; box-shadow:var(--shadow);
-  }
-  .contact-panel h2{ font-size:26px; font-weight:700; margin-bottom:12px; }
-  .contact-panel p{ color:var(--text-1); font-size:15px; max-width:56ch; margin:0 auto 26px; }
-  .contact-btns{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+    .nav-links a:hover {
+      color: var(--primary);
+      background: var(--primary-glow);
+    }
 
-  footer{
-    max-width:1000px; margin:0 auto; padding:24px 24px 50px;
-    font-family:var(--mono); font-size:12px; color:var(--text-2);
-    display:flex; justify-content:center;
-  }
-</style>
+    @media (max-width: 768px) {
+      .nav-links {
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+      }
+      .nav-links::-webkit-scrollbar { display: none; }
+      .navbar { padding: 8px 12px; }
+      .nav-brand span { display: none; }
+    }
+
+    /* ---------- Layout & Sections ---------- */
+    .container {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    section {
+      padding: 85px 0;
+    }
+
+    .section-header {
+      margin-bottom: 48px;
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(26px, 3.5vw, 36px);
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 16px;
+      margin-top: 8px;
+      max-width: 600px;
+    }
+
+    /* ---------- Hero Section ---------- */
+    .hero {
+      padding: 70px 0 60px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: #34D399;
+      margin-bottom: 20px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      background-color: var(--success);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--success);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 4.8vw, 52px);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 .gradient-text {
+      background: linear-gradient(135deg, #FFFFFF 30%, var(--primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-role {
+      font-family: var(--font-mono);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--primary);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-bio {
+      font-size: 16.5px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 32px;
+    }
+
+    .hero-bio strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 22px;
+      border-radius: 10px;
+      font-size: 14.5px;
+      font-weight: 600;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #0284C7, #2563EB);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 18px rgba(37, 99, 235, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(37, 99, 235, 0.5);
+    }
+
+    .btn-secondary {
+      background: var(--bg-surface);
+      color: var(--text-main);
+      border: 1px solid var(--line);
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-elevated);
+      border-color: var(--line-hover);
+      transform: translateY(-2px);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .social-pill {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      background: rgba(148, 163, 184, 0.05);
+      border: 1px solid var(--line);
+      transition: all 0.2s;
+    }
+
+    .social-pill:hover {
+      color: var(--primary);
+      border-color: var(--primary);
+      background: var(--primary-glow);
+    }
+
+    /* Terminal Widget */
+    .terminal-card {
+      background: #090F1D;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 16px;
+      box-shadow: var(--shadow-lg), 0 0 40px rgba(56, 189, 248, 0.05);
+      overflow: hidden;
+      font-family: var(--font-mono);
+      font-size: 13px;
+    }
+
+    .terminal-header {
+      background: #0D1629;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .term-btn { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+    .term-red { background: #EF4444; }
+    .term-yellow { background: #F59E0B; }
+    .term-green { background: #10B981; }
+
+    .term-title {
+      margin-left: auto;
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.05em;
+    }
+
+    .terminal-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .term-prompt { color: #38BDF8; }
+    .term-cmd { color: #F1F5F9; font-weight: 500; }
+    .term-output { color: #94A3B8; padding-left: 8px; }
+    .term-highlight { color: #34D399; }
+
+    /* ---------- Stats Strip ---------- */
+    .stats-container {
+      margin-top: 24px;
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 28px 32px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .stats-container { grid-template-columns: 1fr 1fr; gap: 20px; }
+    }
+
+    .stat-item { text-align: left; }
+    .stat-number {
+      font-size: 32px;
+      font-weight: 800;
+      font-family: var(--font-mono);
+      background: linear-gradient(135deg, #FFFFFF, var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1;
+    }
+    .stat-desc {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 6px;
+    }
+
+    /* ---------- Expertise Grid ---------- */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 860px) { .grid-3 { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 580px) { .grid-3 { grid-template-columns: 1fr; } }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 26px;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      background: var(--bg-surface);
+      border-color: var(--line-hover);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--primary-glow);
+      color: var(--primary);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .card-icon svg { width: 22px; height: 22px; }
+    .card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; color: var(--text-main); }
+    .card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    /* ---------- Timeline (Experience) ---------- */
+    .timeline {
+      position: relative;
+      padding-left: 32px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--primary) 0%, rgba(148, 163, 184, 0.1) 100%);
+    }
+
+    .tl-item {
+      position: relative;
+      padding-bottom: 40px;
+    }
+    .tl-item:last-child { padding-bottom: 0; }
+
+    .tl-dot {
+      position: absolute;
+      left: -32px;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--bg-base);
+      border: 3px solid var(--primary);
+      box-shadow: 0 0 10px var(--primary-glow);
+    }
+
+    .tl-item.active .tl-dot {
+      background: var(--primary);
+      box-shadow: 0 0 14px var(--primary);
+    }
+
+    .tl-card {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px 28px;
+      transition: border-color 0.2s ease;
+    }
+
+    .tl-card:hover { border-color: var(--line-hover); }
+
+    .tl-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .tl-role { font-size: 17.5px; font-weight: 700; color: var(--text-main); }
+    .tl-badge-current {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      color: #34D399;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 3px 8px;
+      border-radius: 999px;
+      margin-left: 8px;
+      letter-spacing: 0.05em;
+    }
+
+    .tl-date {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      color: var(--text-dim);
+    }
+
+    .tl-company {
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+
+    .tl-list { padding-left: 0; }
+    .tl-list li {
+      position: relative;
+      padding-left: 20px;
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .tl-list li:last-child { margin-bottom: 0; }
+    .tl-list li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+    }
+
+    /* ---------- Projects Grid ---------- */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s;
+    }
+
+    .project-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .project-top { margin-bottom: 16px; }
+    .project-name {
+      font-family: var(--font-mono);
+      font-size: 15.5px;
+      font-weight: 600;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .project-arrow { color: var(--text-dim); transition: transform 0.2s, color 0.2s; }
+    .project-card:hover .project-arrow { transform: translate(3px, -3px); color: var(--primary); }
+
+    .project-desc {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .project-footer {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--text-dim);
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .lang-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--primary); }
+
+    /* ---------- Certifications Section ---------- */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .cert-card {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      transition: all 0.2s ease;
+    }
+
+    .cert-card:hover {
+      border-color: var(--line-hover);
+      background: var(--bg-surface);
+    }
+
+    .cert-badge-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--accent-glow);
+      color: #818CF8;
+      border: 1px solid rgba(129, 140, 248, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .cert-badge-icon svg { width: 18px; height: 18px; }
+    .cert-name { font-size: 14px; font-weight: 700; color: var(--text-main); margin-bottom: 2px; }
+    .cert-issuer { font-family: var(--font-mono); font-size: 11.5px; color: var(--primary); }
+
+    /* ---------- Contact CTA Panel ---------- */
+    .contact-card {
+      background: linear-gradient(135deg, #0F1A30, #132242);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 24px;
+      padding: 56px 36px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5);
+    }
+
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.15), transparent 70%);
+      pointer-events: none;
+    }
+
+    .contact-card h2 {
+      font-size: clamp(28px, 4vw, 36px);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .contact-card p {
+      color: var(--text-muted);
+      font-size: 16px;
+      max-width: 580px;
+      margin: 0 auto 32px;
+    }
+
+    .copy-email-btn {
+      font-family: var(--font-mono);
+      font-size: 13.5px;
+      background: rgba(148, 163, 184, 0.1);
+      border: 1px dashed var(--primary);
+      color: var(--primary);
+      padding: 11px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .copy-email-btn:hover {
+      background: var(--primary-glow);
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 36px 0 50px;
+      margin-top: 40px;
+      text-align: center;
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+    }
+  </style>
 </head>
 <body>
 
-  <div class="topnav">
-    <div class="topnav-inner">
-      <span class="brand">MA</span>
-      <nav>
-        <a href="#home">Home</a>
+  <!-- Top Navigation -->
+  <header class="nav-wrapper">
+    <nav class="navbar" aria-label="Main Navigation">
+      <a href="#home" class="nav-brand">
+        <span class="brand-badge">MA</span>
+        <span>mustafa.sys</span>
+      </a>
+      <div class="nav-links">
         <a href="#about">About</a>
         <a href="#expertise">Expertise</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
-        <a href="#certifications">Certifications</a>
+        <a href="#certifications">Certs</a>
         <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </div>
-
-  <header class="hero" id="home">
-    <div class="hero-grid">
-      <div class="photo-wrap">
-        <div class="avatar" aria-hidden="true">MA</div>
-        <div class="badge b1">
-          <div class="badge-val">12+</div>
-          <div class="badge-label">Years</div>
-        </div>
-        <div class="badge b2">
-          <div class="badge-val">5</div>
-          <div class="badge-label">Certs</div>
-        </div>
       </div>
-      <div>
-        <span class="eyebrow">Infrastructure &amp; Cloud Systems Administrator</span>
-        <h1>Mustafa Awad</h1>
-        <div class="role-line">Senior System Administrator — Windows, Azure &amp; Identity</div>
-        <p class="hero-sub">
-          I run enterprise Windows Server and Azure infrastructure end to end —
-          identity, backup, virtualization, and network security — and I'm now
-          building a self-hosted Linux environment for practical, on-prem AI
-          use inside the business.
-        </p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="#contact">Let's Connect</a>
-          <a class="btn btn-ghost" href="#projects">View Projects</a>
-        </div>
-        <div class="social-row">
-          <a href="mailto:Mustafa.awad@outlook.com">Mustafa.awad@outlook.com</a>
-          <a href="https://github.com/mustafawad" target="_blank" rel="noopener">github.com/mustafawad</a>
-        </div>
-      </div>
-    </div>
+    </nav>
   </header>
 
-  <div class="stats-strip">
-    <div class="stats-inner">
-      <div>
-        <div class="stat-val">12+</div>
-        <div class="stat-label">Years Experience</div>
-      </div>
-      <div>
-        <div class="stat-val">5</div>
-        <div class="stat-label">Certifications</div>
-      </div>
-      <div>
-        <div class="stat-val">6</div>
-        <div class="stat-label">Organizations Served</div>
-      </div>
-    </div>
-  </div>
-
-  <section id="about">
-    <div class="section-head">
-      <div class="section-eyebrow">About</div>
-      <h2>Building reliable infrastructure, end to end</h2>
-    </div>
-    <p class="about-intro">
-      I'm a <strong>Senior IT System Administrator</strong> with over a decade
-      of experience across Microsoft technologies, network security, cloud
-      infrastructure, and virtualization. Most recently I spent over a year
-      at <strong>Microsoft</strong> as a Microsoft 365 Identity Support
-      Engineer, working deep in Entra ID and hybrid identity for enterprise
-      customers — and I've since returned to system administration, now
-      applying that background to build a secure Linux environment for AI
-      infrastructure.
-    </p>
-    <div class="about-grid">
-      <div class="about-card">
-        <h3>Where I Add Value</h3>
-        <ul class="value-list">
-          <li><span class="tick">✓</span> Keep Windows Server and Active Directory environments secure, patched, and highly available</li>
-          <li><span class="tick">✓</span> Manage Azure backup and recovery through Recovery Services vaults and Azure Monitor alerting</li>
-          <li><span class="tick">✓</span> Support identity and access management with Microsoft Entra ID, conditional access, and hybrid identity</li>
-          <li><span class="tick">✓</span> Configure and maintain FortiGate firewalls and network security controls</li>
-          <li><span class="tick">✓</span> Automate recurring administration tasks with PowerShell</li>
-          <li><span class="tick">✓</span> Build and run on-prem Linux infrastructure for AI workloads</li>
-        </ul>
-      </div>
-      <div class="about-card">
-        <h3>How I Create Impact</h3>
-        <p>
-          I focus on infrastructure that stays reliable under pressure —
-          backups that actually restore, alerts that fire before a small
-          issue becomes an outage, and identity systems that stay secure
-          without slowing people down. I'm currently expanding that focus
-          into DevOps, Linux, and AI-adjacent workflows, moving from keeping
-          systems alive toward designing the infrastructure that runs them.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="expertise">
-    <div class="section-head">
-      <div class="section-eyebrow">Expertise</div>
-      <h2>Core Expertise</h2>
-      <p>The platforms and practices I work in day to day</p>
-    </div>
-    <div class="expertise-grid">
-      <div class="expertise-card">
-        <div class="expertise-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg></div>
-        <h3>Windows Server &amp; Active Directory</h3>
-        <p>Domain services, DNS/DHCP, group policy, and day-to-day server administration across the enterprise.</p>
-      </div>
-      <div class="expertise-card">
-        <div class="expertise-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"></circle><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"></path></svg></div>
-        <h3>Identity &amp; Access Management</h3>
-        <p>Microsoft Entra ID, conditional access, MFA/SSO, PIM, and hybrid identity with Azure AD Connect.</p>
-      </div>
-      <div class="expertise-card">
-        <div class="expertise-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17a4.5 4.5 0 0 1-1-8.9A5.5 5.5 0 0 1 16.5 6 4.5 4.5 0 0 1 17 17H7Z"></path></svg></div>
-        <h3>Azure Backup &amp; Monitoring</h3>
-        <p>Recovery Services vaults, backup job management, and Azure Monitor alerting for early failure detection.</p>
-      </div>
-      <div class="expertise-card">
-        <div class="expertise-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1.5"></rect><rect x="13" y="4" width="7" height="7" rx="1.5"></rect><rect x="4" y="13" width="7" height="7" rx="1.5"></rect><rect x="13" y="13" width="7" height="7" rx="1.5"></rect></svg></div>
-        <h3>Virtualization</h3>
-        <p>Hyper-V, VMware ESXi, and Proxmox environments, from deployment through day-to-day operations.</p>
-      </div>
-      <div class="expertise-card">
-        <div class="expertise-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.6-3.4 7.9-8 9-4.6-1.1-8-4.4-8-9V6l8-3Z"></path></svg></div>
-        <h3>Network Security</h3>
-        <p>FortiGate firewall configuration and hardening to protect enterprise network perimeters.</p>
-      </div>
-      <div class="expertise-card">
-        <div class="expertise-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M13 5l-2 14"></path></svg></div>
-        <h3>Automation &amp; Linux/AI Infrastructure</h3>
-        <p>PowerShell scripting for recurring tasks, plus a growing Linux (Ubuntu) practice hosting open-source LLMs with Ollama.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience">
-    <div class="section-head">
-      <div class="section-eyebrow">Experience</div>
-      <h2>Professional Journey</h2>
-    </div>
-    <div class="timeline">
-
-      <div class="tl-item current">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-head">
-            <span class="tl-title">Senior System Administrator <span class="current-pill">CURRENT</span></span>
-            <span class="tl-date">Jan 2026 — Present</span>
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-grid">
+        <div>
+          <div class="status-pill">
+            <span class="status-dot"></span>
+            Available for Senior Infrastructure &amp; Identity Roles
           </div>
-          <div class="tl-company">Manaseer Information Technology</div>
-          <ul>
-            <li>Recruited back to the organization to integrate enterprise-grade Microsoft methodologies, driving improvements in system administration, IT support, and infrastructure security.</li>
-            <li>Designed and built a secure, virtualized Linux environment (Ubuntu) dedicated to AI engineering — hosting and managing open-source LLMs (Ollama, Llama) to develop practical AI solutions for the business.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-head">
-            <span class="tl-title">Microsoft 365 Identity Support Engineer</span>
-            <span class="tl-date">Feb 2024 — Aug 2025</span>
+          <h1>
+            Building bulletproof systems &amp; <span class="gradient-text">cloud identity</span>
+          </h1>
+          <div class="hero-role">
+            <span>&gt; Mustafa Awad</span>
+            <span style="color:var(--text-dim)">//</span>
+            <span>Senior System Administrator</span>
           </div>
-          <div class="tl-company">Microsoft</div>
-          <ul>
-            <li>Designed and implemented identity and access management solutions using Microsoft Entra ID (Azure AD), including conditional access policies, MFA, SSO, and identity governance.</li>
-            <li>Configured authentication protocols (SAML, OAuth 2.0, OpenID Connect) for secure app integrations.</li>
-            <li>Developed Conditional Access policies based on user risk, location, and device compliance.</li>
-            <li>Managed B2B identity integrations and deployed Microsoft Entra Identity Protection for threat detection and response.</li>
-            <li>Implemented Just-in-Time (JIT) access and Privileged Identity Management (PIM) to reduce attack surface on high-privilege accounts.</li>
-            <li>Configured Hybrid Identity with Azure AD Connect, including Pass-through Authentication and Seamless SSO.</li>
-          </ul>
-        </div>
-      </div>
+          <p class="hero-bio">
+            Over a decade of experience designing and managing enterprise <strong>Windows Server</strong>, 
+            <strong>Microsoft Entra ID (Azure AD)</strong>, and virtualization. Ex-Microsoft identity engineer, 
+            currently architecting on-premises <strong>Linux AI infrastructure</strong> (Ollama/LLMs) for business operations.
+          </p>
 
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-head">
-            <span class="tl-title">Senior System Administrator</span>
-            <span class="tl-date">Mar 2018 — Feb 2024</span>
+          <div class="btn-group">
+            <a class="btn btn-primary" href="#contact">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              Get in Touch
+            </a>
+            <a class="btn btn-secondary" href="https://github.com/mustafawad" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              GitHub Profile
+            </a>
           </div>
-          <div class="tl-company">Manaseer Information Technology</div>
-          <ul>
-            <li>Led IT infrastructure projects spanning Windows Server, Microsoft 365, and virtualization solutions.</li>
-            <li>Implemented disaster recovery strategies and managed daily server operations.</li>
-            <li>Administered Exchange Online, SharePoint, and Teams, ensuring compliance and availability.</li>
-            <li>Configured FortiGate firewalls, improving security posture across the enterprise.</li>
-          </ul>
-        </div>
-      </div>
 
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-head">
-            <span class="tl-title">IT Specialist → IT Manager &amp; Network Administrator</span>
-            <span class="tl-date">2008 — 2016</span>
+          <div class="social-links">
+            <a class="social-pill" href="mailto:Mustafa.awad@outlook.com">
+              <span>✉</span> Mustafa.awad@outlook.com
+            </a>
+            <a class="social-pill" href="https://github.com/mustafawad" target="_blank" rel="noopener noreferrer">
+              <span>⌥</span> github.com/mustafawad
+            </a>
           </div>
-          <div class="tl-company">Al Nahda Private Schools · Zarqa University Schools · Al Ridwan Schools</div>
-          <ul>
-            <li><strong>Al Ridwan Schools</strong> (2015–2016) — Senior IT Specialist: managed school IT systems and deployed Microsoft 365 for staff and students.</li>
-            <li><strong>Zarqa University Schools</strong> (2013–2014) — IT Manager &amp; Network Administrator: oversaw servers, networking, and security; rolled out smart boards and LMS solutions.</li>
-            <li><strong>Al Nahda Private Schools</strong> (2008–2012) — IT Specialist: provided daily IT support for staff and students.</li>
-          </ul>
+        </div>
+
+        <!-- Terminal Widget -->
+        <div class="terminal-card">
+          <div class="terminal-header">
+            <span class="term-btn term-red"></span>
+            <span class="term-btn term-yellow"></span>
+            <span class="term-btn term-green"></span>
+            <span class="term-title">bash — mustafa@infra-node-01</span>
+          </div>
+          <div class="terminal-body">
+            <div>
+              <span class="term-prompt">mustafa@cloud:~$</span> <span class="term-cmd">az account show --query "{Tenant:tenantId, Role:user.role}"</span>
+              <div class="term-output">
+                { "Role": <span class="term-highlight">"Senior System Administrator"</span>, "Status": "Active" }
+              </div>
+            </div>
+            <div>
+              <span class="term-prompt">mustafa@cloud:~$</span> <span class="term-cmd">ollama run llama3 --prompt "check stack"</span>
+              <div class="term-output">
+                <div>✓ Entra ID &amp; Hybrid Identity (SSO, PIM, CA)</div>
+                <div>✓ Hyper-V / VMware ESXi / Proxmox</div>
+                <div>✓ FortiGate Firewalls &amp; Network Security</div>
+                <div>✓ Ubuntu Server + Local LLMs</div>
+              </div>
+            </div>
+            <div>
+              <span class="term-prompt">mustafa@cloud:~$</span> <span class="term-cmd">uptime</span>
+              <div class="term-output term-highlight">
+                12+ years experience, high availability infrastructure.
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-    </div>
-  </section>
+      <!-- Stats Strip -->
+      <div class="stats-container">
+        <div class="stat-item">
+          <div class="stat-number">12+</div>
+          <div class="stat-desc">Years Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">6</div>
+          <div class="stat-desc">Certifications</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">Ex-MSFT</div>
+          <div class="stat-desc">Identity Engineer</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">99.9%</div>
+          <div class="stat-desc">SLA &amp; Uptime Focus</div>
+        </div>
+      </div>
+    </section>
 
-  <section id="projects">
-    <div class="section-head">
-      <div class="section-eyebrow">Projects</div>
-      <h2>Open Source &amp; Scripts</h2>
-      <p>Tools and scripts I've published on GitHub</p>
-    </div>
-    <div class="project-grid">
-      <a class="project" href="https://github.com/mustafawad/activeDirectory" target="_blank" rel="noopener">
-        <span class="project-name">activeDirectory</span>
-        <span class="project-desc">PowerShell tooling for Active Directory administration and automation.</span>
-        <div class="project-foot">
-          <span class="project-lang"><span class="lang-dot"></span>PowerShell</span>
-          <span class="project-link">View Project ↗</span>
-        </div>
-      </a>
-      <a class="project" href="https://github.com/mustafawad/SharePoint" target="_blank" rel="noopener">
-        <span class="project-name">SharePoint</span>
-        <span class="project-desc">SharePoint Server configuration and administration resources.</span>
-        <div class="project-foot">
-          <span class="project-lang"><span class="lang-dot"></span>SharePoint Server</span>
-          <span class="project-link">View Project ↗</span>
-        </div>
-      </a>
-      <a class="project" href="https://github.com/mustafawad/website" target="_blank" rel="noopener">
-        <span class="project-name">website</span>
-        <span class="project-desc">Personal website project.</span>
-        <div class="project-foot">
-          <span class="project-lang"><span class="lang-dot"></span>CSS</span>
-          <span class="project-link">View Project ↗</span>
-        </div>
-      </a>
-      <a class="project" href="https://github.com/mustafawad" target="_blank" rel="noopener">
-        <span class="project-name">View full profile</span>
-        <span class="project-desc">All repositories and contribution activity on GitHub.</span>
-        <div class="project-foot">
-          <span class="project-lang"><span class="lang-dot"></span>github.com/mustafawad</span>
-          <span class="project-link">Open ↗</span>
-        </div>
-      </a>
-    </div>
-  </section>
+    <!-- Core Expertise -->
+    <section id="expertise">
+      <div class="section-header">
+        <span class="section-eyebrow">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          Technical Capabilities
+        </span>
+        <h2 class="section-title">Core Expertise</h2>
+        <p class="section-desc">Mission-critical systems, identity protocols, and cloud platforms engineered for scale and security.</p>
+      </div>
 
-  <section id="certifications">
-    <div class="section-head">
-      <div class="section-eyebrow">Certifications</div>
-      <h2>Licenses &amp; Certifications</h2>
-    </div>
-    <div class="cert-grid">
-      <div class="cert">
-        <span class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"></circle><path d="M9 13.5 7.5 21 12 18.5 16.5 21 15 13.5"></path></svg></span>
-        <span class="cert-name">Azure Administrator Associate</span>
-        <span class="cert-issuer">Microsoft · AZ-104</span>
-      </div>
-      <div class="cert">
-        <span class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"></circle><path d="M9 13.5 7.5 21 12 18.5 16.5 21 15 13.5"></path></svg></span>
-        <span class="cert-name">Azure Fundamentals</span>
-        <span class="cert-issuer">Microsoft · AZ-900</span>
-      </div>
-      <div class="cert">
-        <span class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"></circle><path d="M9 13.5 7.5 21 12 18.5 16.5 21 15 13.5"></path></svg></span>
-        <span class="cert-name">Certified Network Associate</span>
-        <span class="cert-issuer">Cisco · CCNA</span>
-      </div>
-      <div class="cert">
-        <span class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"></circle><path d="M9 13.5 7.5 21 12 18.5 16.5 21 15 13.5"></path></svg></span>
-        <span class="cert-name">Certified Solutions Expert</span>
-        <span class="cert-issuer">Microsoft · MCSE</span>
-      </div>
-      <div class="cert">
-        <span class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"></circle><path d="M9 13.5 7.5 21 12 18.5 16.5 21 15 13.5"></path></svg></span>
-        <span class="cert-name">Certified Solutions Associate</span>
-        <span class="cert-issuer">Microsoft · MCSA</span>
-      </div>
-      <div class="cert">
-        <span class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"></circle><path d="M9 13.5 7.5 21 12 18.5 16.5 21 15 13.5"></path></svg></span>
-        <span class="cert-name">Exchange Server 2019</span>
-        <span class="cert-issuer">Microsoft</span>
-      </div>
-    </div>
-  </section>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+          </div>
+          <h3>Windows Server &amp; AD</h3>
+          <p>Enterprise Active Directory DS/DNS/DHCP, Group Policy (GPO), WSUS patch management, and server hardening.</p>
+        </div>
 
-  <div class="contact-panel" id="contact">
-    <h2>Let's Connect</h2>
-    <p>
-      I'm always glad to talk infrastructure, cloud identity, or the move
-      into DevOps and AI-driven systems. Reach out by email or check out my
-      work on GitHub.
-    </p>
-    <div class="contact-btns">
-      <a class="btn btn-primary" href="mailto:Mustafa.awad@outlook.com">Email Me</a>
-      <a class="btn btn-ghost" href="https://github.com/mustafawad" target="_blank" rel="noopener">GitHub</a>
-    </div>
-  </div>
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg>
+          </div>
+          <h3>Microsoft Entra &amp; IAM</h3>
+          <p>Conditional Access, MFA, PIM, SAML/OAuth SSO, Hybrid Identity with Entra Connect, and B2B governance.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17a4.5 4.5 0 0 1-1-8.9A5.5 5.5 0 0 1 16.5 6 4.5 4.5 0 0 1 17 17H7Z"/></svg>
+          </div>
+          <h3>Azure Backup &amp; DR</h3>
+          <p>Recovery Services vaults, disaster recovery runbooks, Azure Monitor alerting, and business continuity planning.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>
+          </div>
+          <h3>Virtualization Platforms</h3>
+          <p>Hyper-V clusters, VMware ESXi, and Proxmox VE environments—from capacity sizing to high-availability deployment.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 3v6c0 4.6-3.4 7.9-8 9-4.6-1.1-8-4.4-8-9V6l8-3Z"/></svg>
+          </div>
+          <h3>Network &amp; Perimeter Security</h3>
+          <p>FortiGate firewall policy architecture, IPS/IDS, SSL-VPN access, VLAN segmentation, and CCNA-level routing.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M13 5l-2 14"/></svg>
+          </div>
+          <h3>Linux &amp; AI Infrastructure</h3>
+          <p>Self-hosted Ubuntu server environments, running private open-source LLMs (Ollama/Llama) and PowerShell automation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience">
+      <div class="section-header">
+        <span class="section-eyebrow">Career Path</span>
+        <h2 class="section-title">Professional Experience</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item active">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-top">
+              <span class="tl-role">Senior System Administrator <span class="tl-badge-current">CURRENT</span></span>
+              <span class="tl-date">Jan 2026 — Present</span>
+            </div>
+            <div class="tl-company">Manaseer Information Technology</div>
+            <ul class="tl-list">
+              <li>Recruited back to lead modern infrastructure transformations, aligning on-prem and cloud setups with Microsoft enterprise security baselines.</li>
+              <li>Architected a dedicated, hardened Linux environment (Ubuntu) for localized AI workloads, deploying open-source LLMs via Ollama to enable private business intelligence.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-top">
+              <span class="tl-role">Microsoft 365 Identity Support Engineer</span>
+              <span class="tl-date">Feb 2024 — Aug 2025</span>
+            </div>
+            <div class="tl-company">Microsoft</div>
+            <ul class="tl-list">
+              <li>Engineered identity solutions in Microsoft Entra ID (Azure AD), authoring Zero-Trust Conditional Access rules, MFA, and SSO integrations for high-volume enterprise clients.</li>
+              <li>Configured and troubleshot federation protocols (SAML, OAuth 2.0, OpenID Connect) and Entra Connect Pass-through Authentication.</li>
+              <li>Reduced privileged account attack vectors using Just-in-Time (JIT) access and Privileged Identity Management (PIM).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-top">
+              <span class="tl-role">Senior System Administrator</span>
+              <span class="tl-date">Mar 2018 — Feb 2024</span>
+            </div>
+            <div class="tl-company">Manaseer Information Technology</div>
+            <ul class="tl-list">
+              <li>Managed 100+ virtualized workloads, Windows Server clusters, and enterprise storage arrays.</li>
+              <li>Administered Exchange Online, SharePoint, and Teams while strengthening perimeter security via FortiGate firewalls.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-top">
+              <span class="tl-role">IT Manager &amp; Network Specialist Roles</span>
+              <span class="tl-date">2008 — 2016</span>
+            </div>
+            <div class="tl-company">Al Ridwan Schools · Zarqa University Schools · Al Nahda Schools</div>
+            <ul class="tl-list">
+              <li>Oversaw server upgrades, network infrastructure, campus-wide connectivity, and digital classroom rollouts.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="section-header">
+        <span class="section-eyebrow">Open Source</span>
+        <h2 class="section-title">Tooling &amp; Repositories</h2>
+      </div>
+
+      <div class="project-grid">
+        <a class="project-card" href="https://github.com/mustafawad/activeDirectory" target="_blank" rel="noopener noreferrer">
+          <div class="project-top">
+            <div class="project-name">
+              <span>activeDirectory</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <p class="project-desc">Automated PowerShell scripts for bulk Active Directory administration, health audits, and compliance validation.</p>
+          </div>
+          <div class="project-footer">
+            <span class="lang-dot"></span>
+            <span>PowerShell</span>
+          </div>
+        </a>
+
+        <a class="project-card" href="https://github.com/mustafawad/SharePoint" target="_blank" rel="noopener noreferrer">
+          <div class="project-top">
+            <div class="project-name">
+              <span>SharePoint</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <p class="project-desc">Configuration templates, disaster recovery runbooks, and administration scripts for SharePoint Server.</p>
+          </div>
+          <div class="project-footer">
+            <span class="lang-dot" style="background:#0284C7"></span>
+            <span>Configuration</span>
+          </div>
+        </a>
+
+        <a class="project-card" href="https://github.com/mustafawad" target="_blank" rel="noopener noreferrer">
+          <div class="project-top">
+            <div class="project-name">
+              <span>github.com/mustafawad</span>
+              <span class="project-arrow">↗</span>
+            </div>
+            <p class="project-desc">Explore all repositories, PowerShell utilities, and ongoing infrastructure automation projects.</p>
+          </div>
+          <div class="project-footer">
+            <span class="lang-dot" style="background:#10B981"></span>
+            <span>GitHub Profile</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications">
+      <div class="section-header">
+        <span class="section-eyebrow">Credentials</span>
+        <h2 class="section-title">Licenses &amp; Certifications</h2>
+      </div>
+
+      <div class="cert-grid">
+        <div class="cert-card">
+          <div class="cert-badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15l-2 5l9-13h-6l2-5l-9 13h6z"/></svg>
+          </div>
+          <div>
+            <div class="cert-name">Azure Administrator Associate</div>
+            <div class="cert-issuer">Microsoft · AZ-104</div>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15l-2 5l9-13h-6l2-5l-9 13h6z"/></svg>
+          </div>
+          <div>
+            <div class="cert-name">Azure Fundamentals</div>
+            <div class="cert-issuer">Microsoft · AZ-900</div>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <div>
+            <div class="cert-name">Certified Network Associate</div>
+            <div class="cert-issuer">Cisco · CCNA</div>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15l-2 5l9-13h-6l2-5l-9 13h6z"/></svg>
+          </div>
+          <div>
+            <div class="cert-name">Solutions Expert (MCSE)</div>
+            <div class="cert-issuer">Microsoft</div>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15l-2 5l9-13h-6l2-5l-9 13h6z"/></svg>
+          </div>
+          <div>
+            <div class="cert-name">Solutions Associate (MCSA)</div>
+            <div class="cert-issuer">Microsoft</div>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <div>
+            <div class="cert-name">Exchange Server 2019</div>
+            <div class="cert-issuer">Microsoft</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Panel -->
+    <section id="contact">
+      <div class="contact-card">
+        <h2>Let's build secure infrastructure</h2>
+        <p>Whether you're looking for enterprise identity architecture, cloud migrations, or resilient systems administration, I'd love to connect.</p>
+        
+        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+          <a class="btn btn-primary" href="mailto:Mustafa.awad@outlook.com">
+            Send Email
+          </a>
+          <button class="copy-email-btn" id="copyEmailBtn" onclick="copyEmail()">
+            <span>📋</span> <span id="copyBtnText">Copy: Mustafa.awad@outlook.com</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <span>© 2026 Mustafa Awad</span>
+    <div class="container">
+      <div>© 2026 Mustafa Awad · Senior System Administrator</div>
+    </div>
   </footer>
 
+  <!-- Copy Email Script -->
+  <script>
+    function copyEmail() {
+      const email = 'Mustafa.awad@outlook.com';
+      navigator.clipboard.writeText(email).then(() => {
+        const btnText = document.getElementById('copyBtnText');
+        const originalText = btnText.innerText;
+        btnText.innerText = 'Copied to Clipboard! ✓';
+        setTimeout(() => {
+          btnText.innerText = originalText;
+        }, 2200);
+      });
+    }
+  </script>
 </body>
 </html>
