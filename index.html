@@ -51,7 +51,7 @@
     
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 90px;
+      scroll-padding-top: 100px;
     }
 
     body {
@@ -95,17 +95,17 @@
     /* ---------- Navigation ---------- */
     .nav-wrapper {
       position: sticky;
-      top: 16px;
+      top: 14px;
       z-index: 100;
       display: flex;
       justify-content: center;
-      padding: 0 20px;
+      padding: 0 16px;
     }
 
     .navbar {
       width: 100%;
       max-width: 960px;
-      background: rgba(14, 23, 43, 0.82);
+      background: rgba(14, 23, 43, 0.88);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid var(--line);
@@ -125,6 +125,7 @@
       font-weight: 700;
       font-size: 14px;
       color: var(--text-main);
+      flex-shrink: 0;
     }
 
     .brand-badge {
@@ -161,13 +162,20 @@
     }
 
     @media (max-width: 768px) {
+      .navbar {
+        padding: 6px 8px 6px 14px;
+      }
       .nav-links {
         overflow-x: auto;
         white-space: nowrap;
         scrollbar-width: none;
+        padding-left: 8px;
       }
       .nav-links::-webkit-scrollbar { display: none; }
-      .navbar { padding: 8px 12px; }
+      .nav-links a {
+        font-size: 12.5px;
+        padding: 5px 10px;
+      }
       .nav-brand span { display: none; }
     }
 
@@ -181,11 +189,11 @@
     }
 
     section {
-      padding: 85px 0;
+      padding: 70px 0;
     }
 
     .section-header {
-      margin-bottom: 48px;
+      margin-bottom: 40px;
     }
 
     .section-eyebrow {
@@ -202,7 +210,7 @@
     }
 
     .section-title {
-      font-size: clamp(26px, 3.5vw, 36px);
+      font-size: clamp(24px, 3.5vw, 36px);
       font-weight: 800;
       color: var(--text-main);
       letter-spacing: -0.02em;
@@ -210,25 +218,25 @@
 
     .section-desc {
       color: var(--text-muted);
-      font-size: 16px;
+      font-size: 15.5px;
       margin-top: 8px;
       max-width: 600px;
     }
 
     /* ---------- Hero Section ---------- */
     .hero {
-      padding: 70px 0 60px;
+      padding: 40px 0 50px;
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
-      gap: 48px;
+      gap: 40px;
       align-items: center;
     }
 
     @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
     }
 
     .status-pill {
@@ -243,7 +251,7 @@
       font-size: 12px;
       font-weight: 500;
       color: #34D399;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .status-dot {
@@ -261,9 +269,9 @@
     }
 
     .hero h1 {
-      font-size: clamp(34px, 4.8vw, 52px);
+      font-size: clamp(30px, 4.5vw, 50px);
       font-weight: 800;
-      line-height: 1.12;
+      line-height: 1.15;
       letter-spacing: -0.03em;
       margin-bottom: 12px;
     }
@@ -276,20 +284,21 @@
 
     .hero-role {
       font-family: var(--font-mono);
-      font-size: 15px;
+      font-size: 14.5px;
       font-weight: 500;
       color: var(--primary);
       margin-bottom: 18px;
       display: flex;
       align-items: center;
       gap: 8px;
+      flex-wrap: wrap;
     }
 
     .hero-bio {
-      font-size: 16.5px;
+      font-size: 16px;
       color: var(--text-muted);
       line-height: 1.65;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
 
     .hero-bio strong {
@@ -299,9 +308,9 @@
 
     .btn-group {
       display: flex;
-      gap: 14px;
+      gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
     .btn {
@@ -310,7 +319,7 @@
       gap: 8px;
       padding: 11px 22px;
       border-radius: 10px;
-      font-size: 14.5px;
+      font-size: 14px;
       font-weight: 600;
       transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       cursor: pointer;
@@ -342,14 +351,14 @@
 
     .social-links {
       display: flex;
-      gap: 16px;
+      gap: 12px;
       align-items: center;
       flex-wrap: wrap;
     }
 
     .social-pill {
       font-family: var(--font-mono);
-      font-size: 12.5px;
+      font-size: 12px;
       color: var(--text-muted);
       display: inline-flex;
       align-items: center;
@@ -367,93 +376,110 @@
       background: var(--primary-glow);
     }
 
-    /* Terminal Widget */
-    .terminal-card {
-      background: #090F1D;
-      border: 1px solid rgba(148, 163, 184, 0.18);
+    /* ---------- Infrastructure Snapshot Card ---------- */
+    .infra-card {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
       border-radius: 16px;
-      box-shadow: var(--shadow-lg), 0 0 40px rgba(56, 189, 248, 0.05);
-      overflow: hidden;
-      font-family: var(--font-mono);
-      font-size: 13px;
+      padding: 24px;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-lg);
     }
 
-    .terminal-header {
-      background: #0D1629;
-      padding: 12px 16px;
+    .infra-card-header {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary);
       border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+      margin-bottom: 14px;
     }
 
-    .term-btn { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
-    .term-red { background: #EF4444; }
-    .term-yellow { background: #F59E0B; }
-    .term-green { background: #10B981; }
-
-    .term-title {
-      margin-left: auto;
-      font-size: 11px;
-      color: var(--text-dim);
-      letter-spacing: 0.05em;
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--primary);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--primary);
     }
 
-    .terminal-body {
-      padding: 20px;
+    .infra-spec-list {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      color: var(--text-muted);
-      line-height: 1.5;
+      gap: 11px;
     }
 
-    .term-prompt { color: #38BDF8; }
-    .term-cmd { color: #F1F5F9; font-weight: 500; }
-    .term-output { color: #94A3B8; padding-left: 8px; }
-    .term-highlight { color: #34D399; }
+    .infra-spec-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13.5px;
+      padding: 4px 0;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.06);
+      gap: 12px;
+    }
+
+    .infra-spec-item:last-child {
+      border-bottom: none;
+    }
+
+    .spec-label {
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .spec-value {
+      color: var(--text-main);
+      font-weight: 600;
+      text-align: right;
+    }
 
     /* ---------- Stats Strip ---------- */
     .stats-container {
-      margin-top: 24px;
+      margin-top: 28px;
       background: var(--bg-card);
       backdrop-filter: blur(12px);
       border: 1px solid var(--line);
       border-radius: 16px;
-      padding: 28px 32px;
+      padding: 22px 28px;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
+      gap: 20px;
     }
 
     @media (max-width: 768px) {
-      .stats-container { grid-template-columns: 1fr 1fr; gap: 20px; }
+      .stats-container { grid-template-columns: 1fr 1fr; gap: 16px; padding: 18px 20px; }
     }
 
     .stat-item { text-align: left; }
     .stat-number {
-      font-size: 32px;
+      font-size: clamp(20px, 3.5vw, 28px);
       font-weight: 800;
       font-family: var(--font-mono);
-      background: linear-gradient(135deg, #FFFFFF, var(--primary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      line-height: 1;
+      color: var(--text-main);
+      line-height: 1.1;
+      white-space: nowrap;
     }
     .stat-desc {
-      font-size: 12.5px;
+      font-size: 11px;
       font-weight: 600;
       color: var(--text-dim);
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      margin-top: 6px;
+      margin-top: 5px;
     }
 
     /* ---------- Expertise Grid ---------- */
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 18px;
     }
 
     @media (max-width: 860px) { .grid-3 { grid-template-columns: 1fr 1fr; } }
@@ -463,7 +489,7 @@
       background: var(--bg-card);
       border: 1px solid var(--line);
       border-radius: 16px;
-      padding: 26px;
+      padding: 24px;
       transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       display: flex;
@@ -478,8 +504,8 @@
     }
 
     .card-icon {
-      width: 44px;
-      height: 44px;
+      width: 42px;
+      height: 42px;
       border-radius: 12px;
       background: var(--primary-glow);
       color: var(--primary);
@@ -487,12 +513,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
-    .card-icon svg { width: 22px; height: 22px; }
-    .card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; color: var(--text-main); }
-    .card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+    .card-icon svg { width: 20px; height: 20px; }
+    .card h3 { font-size: 16.5px; font-weight: 700; margin-bottom: 8px; color: var(--text-main); }
+    .card p { font-size: 13.5px; color: var(--text-muted); line-height: 1.6; }
 
     /* ---------- Timeline (Experience) ---------- */
     .timeline {
@@ -512,7 +538,7 @@
 
     .tl-item {
       position: relative;
-      padding-bottom: 40px;
+      padding-bottom: 36px;
     }
     .tl-item:last-child { padding-bottom: 0; }
 
@@ -537,7 +563,7 @@
       background: var(--bg-card);
       border: 1px solid var(--line);
       border-radius: 16px;
-      padding: 24px 28px;
+      padding: 22px 26px;
       transition: border-color 0.2s ease;
     }
 
@@ -552,7 +578,7 @@
       margin-bottom: 4px;
     }
 
-    .tl-role { font-size: 17.5px; font-weight: 700; color: var(--text-main); }
+    .tl-role { font-size: 16.5px; font-weight: 700; color: var(--text-main); }
     .tl-badge-current {
       font-family: var(--font-mono);
       font-size: 10px;
@@ -568,22 +594,22 @@
 
     .tl-date {
       font-family: var(--font-mono);
-      font-size: 12.5px;
+      font-size: 12px;
       color: var(--text-dim);
     }
 
     .tl-company {
-      font-size: 14.5px;
+      font-size: 14px;
       font-weight: 600;
       color: var(--primary);
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .tl-list { padding-left: 0; }
     .tl-list li {
       position: relative;
-      padding-left: 20px;
-      font-size: 14px;
+      padding-left: 18px;
+      font-size: 13.5px;
       color: var(--text-muted);
       margin-bottom: 8px;
     }
@@ -599,14 +625,14 @@
     .project-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
+      gap: 18px;
     }
 
     .project-card {
       background: var(--bg-card);
       border: 1px solid var(--line);
       border-radius: 16px;
-      padding: 24px;
+      padding: 22px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -622,7 +648,7 @@
     .project-top { margin-bottom: 16px; }
     .project-name {
       font-family: var(--font-mono);
-      font-size: 15.5px;
+      font-size: 15px;
       font-weight: 600;
       color: var(--text-main);
       display: flex;
@@ -635,7 +661,7 @@
     .project-card:hover .project-arrow { transform: translate(3px, -3px); color: var(--primary); }
 
     .project-desc {
-      font-size: 13.5px;
+      font-size: 13px;
       color: var(--text-muted);
       line-height: 1.55;
     }
@@ -647,7 +673,7 @@
       font-family: var(--font-mono);
       font-size: 11.5px;
       color: var(--text-dim);
-      padding-top: 14px;
+      padding-top: 12px;
       border-top: 1px solid var(--line);
     }
 
@@ -664,7 +690,7 @@
       background: var(--bg-card);
       border: 1px solid var(--line);
       border-radius: 14px;
-      padding: 20px;
+      padding: 18px;
       display: flex;
       gap: 14px;
       align-items: flex-start;
@@ -690,7 +716,7 @@
     }
 
     .cert-badge-icon svg { width: 18px; height: 18px; }
-    .cert-name { font-size: 14px; font-weight: 700; color: var(--text-main); margin-bottom: 2px; }
+    .cert-name { font-size: 13.5px; font-weight: 700; color: var(--text-main); margin-bottom: 2px; }
     .cert-issuer { font-family: var(--font-mono); font-size: 11.5px; color: var(--primary); }
 
     /* ---------- Contact CTA Panel ---------- */
@@ -698,7 +724,7 @@
       background: linear-gradient(135deg, #0F1A30, #132242);
       border: 1px solid rgba(56, 189, 248, 0.25);
       border-radius: 24px;
-      padding: 56px 36px;
+      padding: 50px 28px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -718,21 +744,21 @@
     }
 
     .contact-card h2 {
-      font-size: clamp(28px, 4vw, 36px);
+      font-size: clamp(24px, 4vw, 34px);
       font-weight: 800;
       margin-bottom: 12px;
     }
 
     .contact-card p {
       color: var(--text-muted);
-      font-size: 16px;
+      font-size: 15.5px;
       max-width: 580px;
-      margin: 0 auto 32px;
+      margin: 0 auto 28px;
     }
 
     .copy-email-btn {
       font-family: var(--font-mono);
-      font-size: 13.5px;
+      font-size: 13px;
       background: rgba(148, 163, 184, 0.1);
       border: 1px dashed var(--primary);
       color: var(--primary);
@@ -752,12 +778,12 @@
     /* ---------- Footer ---------- */
     footer {
       border-top: 1px solid var(--line);
-      padding: 36px 0 50px;
-      margin-top: 40px;
+      padding: 32px 0 45px;
+      margin-top: 30px;
       text-align: center;
       color: var(--text-dim);
       font-family: var(--font-mono);
-      font-size: 12.5px;
+      font-size: 12px;
     }
   </style>
 </head>
@@ -825,35 +851,36 @@
           </div>
         </div>
 
-        <!-- Terminal Widget -->
-        <div class="terminal-card">
-          <div class="terminal-header">
-            <span class="term-btn term-red"></span>
-            <span class="term-btn term-yellow"></span>
-            <span class="term-btn term-green"></span>
-            <span class="term-title">bash — mustafa@infra-node-01</span>
+        <!-- Infrastructure Focus Card -->
+        <div class="infra-card" id="about">
+          <div class="infra-card-header">
+            <span class="pulse-dot"></span>
+            <span>Infrastructure &amp; Identity Focus</span>
           </div>
-          <div class="terminal-body">
-            <div>
-              <span class="term-prompt">mustafa@cloud:~$</span> <span class="term-cmd">az account show --query "{Tenant:tenantId, Role:user.role}"</span>
-              <div class="term-output">
-                { "Role": <span class="term-highlight">"Senior System Administrator"</span>, "Status": "Active" }
-              </div>
+          <div class="infra-spec-list">
+            <div class="infra-spec-item">
+              <span class="spec-label">Core Directory</span>
+              <span class="spec-value">Active Directory &amp; Entra ID</span>
             </div>
-            <div>
-              <span class="term-prompt">mustafa@cloud:~$</span> <span class="term-cmd">ollama run llama3 --prompt "check stack"</span>
-              <div class="term-output">
-                <div>✓ Entra ID &amp; Hybrid Identity (SSO, PIM, CA)</div>
-                <div>✓ Hyper-V / VMware ESXi / Proxmox</div>
-                <div>✓ FortiGate Firewalls &amp; Network Security</div>
-                <div>✓ Ubuntu Server + Local LLMs</div>
-              </div>
+            <div class="infra-spec-item">
+              <span class="spec-label">Hybrid Identity</span>
+              <span class="spec-value">SSO · MFA · PIM · Conditional Access</span>
             </div>
-            <div>
-              <span class="term-prompt">mustafa@cloud:~$</span> <span class="term-cmd">uptime</span>
-              <div class="term-output term-highlight">
-                12+ years experience, high availability infrastructure.
-              </div>
+            <div class="infra-spec-item">
+              <span class="spec-label">Virtualization</span>
+              <span class="spec-value">Hyper-V · ESXi · Proxmox</span>
+            </div>
+            <div class="infra-spec-item">
+              <span class="spec-label">Network Perimeter</span>
+              <span class="spec-value">FortiGate Firewall Hardening</span>
+            </div>
+            <div class="infra-spec-item">
+              <span class="spec-label">Cloud Backup &amp; DR</span>
+              <span class="spec-value">Azure Recovery Services Vaults</span>
+            </div>
+            <div class="infra-spec-item">
+              <span class="spec-label">AI &amp; Automation</span>
+              <span class="spec-value">Ubuntu · PowerShell · Ollama</span>
             </div>
           </div>
         </div>
