@@ -7,6 +7,16 @@
   <meta name="description" content="Mustafa Awad — Senior System Administrator &amp; Infrastructure Engineer.">
   <meta name="author" content="Mustafa Awad">
 
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mustafa Awad">
+  <meta property="og:description" content="Mustafa Awad — Senior System Administrator, cloud identity engineer, and infrastructure builder.">
+
+  <!-- Google Fonts: Newsreader (Editorial Serif) & Cormorant Garamond -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+
   <style>
     * {
       box-sizing: border-box;
@@ -15,133 +25,180 @@
     }
 
     body {
-      background-color: #FFFFFF;
-      color: #1A1A1A;
-      font-family: Georgia, 'Times New Roman', Times, serif;
-      font-size: 18.5px;
-      line-height: 1.75;
+      background-color: #F5F2EB; /* Exact warm ivory parchment */
+      color: #22201D;
+      font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+      font-size: 19.5px;
+      line-height: 1.8;
       -webkit-font-smoothing: antialiased;
-      padding: 60px 24px 100px;
+      padding: 60px 20px 100px;
     }
 
-    .container {
-      max-width: 620px;
+    .wrapper {
+      max-width: 580px;
       margin: 0 auto;
     }
 
-    /* Top navigation header */
-    .top-header {
-      margin-bottom: 48px;
-      font-size: 18px;
-      color: #1A1A1A;
+    /* ---------- Top Header ---------- */
+    .site-header {
+      text-align: center;
+      margin-bottom: 24px;
     }
 
-    .top-header a {
-      color: #1A1A1A;
+    .site-title {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 16.5px;
+      font-weight: 500;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: #1A1917;
       text-decoration: none;
+      display: inline-block;
+      padding-left: 0.38em; /* Centers tracking */
     }
 
-    /* Intro block with text and square image */
-    .intro-section {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 28px;
-      margin-bottom: 28px;
+    /* ---------- Divider with Dot ---------- */
+    .divider-wrap {
+      position: relative;
+      text-align: center;
+      margin-bottom: 38px;
     }
 
-    .intro-text h1 {
-      font-size: 26px;
-      font-weight: normal;
-      color: #1A1A1A;
-      margin-bottom: 6px;
-      line-height: 1.25;
+    .divider-line {
+      height: 1px;
+      background-color: #DDD6CA;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      z-index: 1;
     }
 
-    .intro-text .section-title {
-      font-size: 18px;
-      color: #444444;
-      font-weight: normal;
+    .divider-dot {
+      position: relative;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #FAF7F2;
+      border: 1px solid #DDD6CA;
+      width: 22px;
+      height: 22px;
+      color: #8C8479;
+      font-size: 14px;
+      line-height: 1;
     }
 
-    /* Perfectly square photo */
-    .profile-img {
-      width: 130px;
-      height: 130px;
-      border-radius: 0px; /* Exact square */
+    /* ---------- Framed Portrait ---------- */
+    .photo-frame {
+      background: #FFFFFF;
+      padding: 12px;
+      border: 1px solid #E0D9CE;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      margin: 0 auto 42px auto;
+      max-width: 480px;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1;
       object-fit: cover;
-      flex-shrink: 0;
       display: block;
-      background-color: #F0F0F0;
+      background-color: #ECE7DE;
     }
 
-    /* Narrative paragraphs */
+    /* ---------- Section Label ---------- */
+    .section-label {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 13.5px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: #6E685F;
+      font-weight: 500;
+      margin-bottom: 24px;
+      padding-left: 0.32em;
+    }
+
+    /* ---------- Article & Prose ---------- */
     article p {
-      margin-bottom: 22px;
-      color: #2A2A2A;
+      margin-bottom: 24px;
+      color: #24221F;
+      text-align: left;
     }
 
     article p strong {
-      color: #111111;
+      color: #11100E;
       font-weight: 600;
     }
 
     a {
-      color: #1A1A1A;
+      color: #22201D;
       text-decoration: underline;
-      text-underline-offset: 3px;
+      text-underline-offset: 3.5px;
       text-decoration-thickness: 1px;
-      transition: color 0.15s ease;
+      transition: color 0.15s ease, text-decoration-color 0.15s ease;
     }
 
     a:hover {
-      color: #0055CC;
+      color: #0284C7;
+      text-decoration-color: #0284C7;
     }
 
-    /* Footer contact links */
+    /* ---------- Footer Links ---------- */
     .footer-links {
-      margin-top: 40px;
-      font-size: 17.5px;
-      color: #333333;
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid #DDD6CA;
+      font-size: 16.5px;
+      color: #6E685F;
+      text-align: left;
     }
 
     .footer-links span {
       margin: 0 6px;
-      color: #888888;
+      color: #BDB5A8;
     }
 
-    @media (max-width: 540px) {
+    @media (max-width: 600px) {
       body {
-        padding: 40px 20px 70px;
-        font-size: 17.5px;
+        padding: 40px 18px 70px;
+        font-size: 18px;
+        line-height: 1.74;
       }
-      .intro-section {
-        flex-direction: column-reverse;
-        gap: 20px;
+      .photo-frame {
+        padding: 8px;
       }
-      .profile-img {
-        width: 110px;
-        height: 110px;
+      .site-title {
+        font-size: 14.5px;
+        letter-spacing: 0.3em;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <header class="top-header">
-      <a href="/">Mustafa Awad</a>
+  <main class="wrapper">
+    <!-- Header Title -->
+    <header class="site-header">
+      <a href="/" class="site-title">Mustafa Awad</a>
     </header>
 
-    <div class="intro-section">
-      <div class="intro-text">
-        <h1>Mustafa Awad</h1>
-        <div class="section-title">About me</div>
-      </div>
-      <!-- Square Profile Photo -->
-      <img src="profile.JPG" alt="Mustafa Awad" class="profile-img">
+    <!-- Line divider with centered box dot -->
+    <div class="divider-wrap">
+      <div class="divider-line"></div>
+      <div class="divider-dot">·</div>
     </div>
 
+    <!-- Centered Picture with White Matting Border -->
+    <div class="photo-frame">
+      <img src="profile.JPG" alt="Mustafa Awad">
+    </div>
+
+    <!-- About Me Label -->
+    <div class="section-label">About me</div>
+
+    <!-- Narrative Prose -->
     <article>
       <p>
         I have spent over twelve years working with the invisible machinery of computing—the directory structures, network perimeters, and virtualization layers that quietly keep organizations running. Currently, at <strong>Manaseer Information Technology</strong>, I oversee enterprise infrastructure while building out our localized, self-hosted Linux environments to run open-source large language models (using <a href="https://ollama.com" target="_blank" rel="noopener noreferrer">Ollama</a>) securely inside the business.
@@ -160,6 +217,7 @@
       </p>
     </article>
 
+    <!-- Footer Links -->
     <footer class="footer-links">
       <a href="mailto:Mustafa.awad@outlook.com">Mustafa.awad@outlook.com</a>
       <span>·</span>
@@ -167,10 +225,9 @@
       <span>·</span>
       <a href="https://github.com/mustafawad" target="_blank" rel="noopener noreferrer">GitHub</a>
       <span>·</span>
-      <!-- Direct PDF CV link -->
       <a href="cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
     </footer>
-  </div>
+  </main>
 
 </body>
 </html>
