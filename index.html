@@ -7,185 +7,139 @@
   <meta name="description" content="Mustafa Awad — Senior System Administrator &amp; Infrastructure Engineer.">
   <meta name="author" content="Mustafa Awad">
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Mustafa Awad">
-  <meta property="og:description" content="Mustafa Awad — Senior System Administrator, cloud identity engineer, and infrastructure builder.">
-
-  <!-- Fonts: Newsreader & Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-
   <style>
-    :root {
-      --bg: #FAF9F6;
-      --text: #1C1917;
-      --text-muted: #44403C;
-      --text-light: #78716C;
-      --link: #1C1917;
-      --link-hover: #0284C7;
-      --line: #E7E5E4;
-      --font-serif: 'Newsreader', Georgia, Cambria, serif;
-      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #141517;
-        --text: #EDEDED;
-        --text-muted: #A8A29E;
-        --text-light: #78716C;
-        --link: #F5F5F4;
-        --link-hover: #38BDF8;
-        --line: #26272B;
-      }
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: var(--font-serif);
-      font-size: 19.5px;
-      line-height: 1.78;
+      background-color: #FFFFFF;
+      color: #1A1A1A;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 18.5px;
+      line-height: 1.75;
       -webkit-font-smoothing: antialiased;
-      padding: 70px 24px 120px;
+      padding: 60px 24px 100px;
     }
 
     .container {
-      max-width: 590px;
+      max-width: 620px;
       margin: 0 auto;
     }
 
-    /* Top Navigation bar */
-    .top-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    /* Top navigation header */
+    .top-header {
       margin-bottom: 48px;
-      font-family: var(--font-serif);
-      font-size: 20px;
+      font-size: 18px;
+      color: #1A1A1A;
     }
 
-    .site-title {
-      font-weight: 500;
-      color: var(--text);
+    .top-header a {
+      color: #1A1A1A;
       text-decoration: none;
     }
 
-    /* Profile Image & Header */
-    .profile-section {
+    /* Intro block with text and square image */
+    .intro-section {
       display: flex;
-      align-items: center;
-      gap: 22px;
-      margin-bottom: 32px;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 28px;
+      margin-bottom: 28px;
     }
 
-    .profile-img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1px solid var(--line);
-      flex-shrink: 0;
-      background-color: var(--line);
-      display: block;
-    }
-
-    .header-text h1 {
-      font-family: var(--font-serif);
-      font-size: 27px;
-      font-weight: 500;
+    .intro-text h1 {
+      font-size: 26px;
+      font-weight: normal;
+      color: #1A1A1A;
+      margin-bottom: 6px;
       line-height: 1.25;
-      color: var(--text);
-      margin-bottom: 4px;
     }
 
-    .section-label {
-      font-family: var(--font-sans);
-      font-size: 12.5px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-light);
-      font-weight: 500;
-      margin-top: 4px;
+    .intro-text .section-title {
+      font-size: 18px;
+      color: #444444;
+      font-weight: normal;
+    }
+
+    /* Perfectly square photo */
+    .profile-img {
+      width: 130px;
+      height: 130px;
+      border-radius: 0px; /* Exact square */
+      object-fit: cover;
+      flex-shrink: 0;
       display: block;
+      background-color: #F0F0F0;
     }
 
-    /* Prose */
+    /* Narrative paragraphs */
     article p {
-      margin-bottom: 24px;
-      color: var(--text-muted);
+      margin-bottom: 22px;
+      color: #2A2A2A;
     }
 
     article p strong {
-      color: var(--text);
-      font-weight: 500;
+      color: #111111;
+      font-weight: 600;
     }
 
     a {
-      color: var(--link);
+      color: #1A1A1A;
       text-decoration: underline;
+      text-underline-offset: 3px;
       text-decoration-thickness: 1px;
-      text-underline-offset: 3.5px;
-      transition: color 0.15s ease, text-decoration-color 0.15s ease;
+      transition: color 0.15s ease;
     }
 
     a:hover {
-      color: var(--link-hover);
-      text-decoration-color: var(--link-hover);
+      color: #0055CC;
     }
 
     /* Footer contact links */
     .footer-links {
-      margin-top: 48px;
-      padding-top: 24px;
-      font-family: var(--font-sans);
-      font-size: 14px;
-      color: var(--text-muted);
+      margin-top: 40px;
+      font-size: 17.5px;
+      color: #333333;
     }
 
     .footer-links span {
-      margin: 0 8px;
-      color: var(--line);
+      margin: 0 6px;
+      color: #888888;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 540px) {
       body {
-        padding: 44px 20px 80px;
-        font-size: 18.5px;
-        line-height: 1.72;
+        padding: 40px 20px 70px;
+        font-size: 17.5px;
       }
-      .profile-section {
-        gap: 18px;
+      .intro-section {
+        flex-direction: column-reverse;
+        gap: 20px;
       }
       .profile-img {
-        width: 82px;
-        height: 82px;
-      }
-      .header-text h1 {
-        font-size: 24px;
+        width: 110px;
+        height: 110px;
       }
     }
   </style>
 </head>
 <body>
 
-  <main class="container">
-    <nav class="top-nav" aria-label="Site Header">
-      <a href="/" class="site-title">Mustafa Awad</a>
-    </nav>
+  <div class="container">
+    <header class="top-header">
+      <a href="/">Mustafa Awad</a>
+    </header>
 
-    <div class="profile-section">
-      <!-- Direct link to profile.JPG -->
-      <img src="profile.JPG" alt="Mustafa Awad" class="profile-img">
-      
-      <div class="header-text">
+    <div class="intro-section">
+      <div class="intro-text">
         <h1>Mustafa Awad</h1>
-        <span class="section-label">About me</span>
+        <div class="section-title">About me</div>
       </div>
+      <!-- Square Profile Photo -->
+      <img src="profile.JPG" alt="Mustafa Awad" class="profile-img">
     </div>
 
     <article>
@@ -209,11 +163,11 @@
     <footer class="footer-links">
       <a href="mailto:Mustafa.awad@outlook.com">Mustafa.awad@outlook.com</a>
       <span>·</span>
-      <a href="https://github.com/mustafawad" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <span>·</span>
       <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <span>·</span>
+      <a href="https://github.com/mustafawad" target="_blank" rel="noopener noreferrer">GitHub</a>
     </footer>
-  </main>
+  </div>
 
 </body>
 </html>
