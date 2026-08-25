@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculum Vitae | Mustafa Awad</title>
+  <meta name="description" content="Curriculum Vitae of Mustafa Awad — Senior System Administrator & Infrastructure Engineer.">
+  <meta name="author" content="Mustafa Awad">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #F5F2EB;
+      color: #22201D;
+      font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+      font-size: 18.5px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      padding: 50px 20px 100px;
+    }
+
+    .wrapper {
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation Header */
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 14px;
+    }
+
+    .back-link {
+      color: #1A1917;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.15s ease;
+    }
+
+    .back-link:hover {
+      color: #0284C7;
+    }
+
+    .download-btn {
+      color: #1A1917;
+      text-decoration: none;
+      font-weight: 500;
+      border: 1px solid #DDD6CA;
+      background-color: #FAF7F2;
+      padding: 6px 14px;
+      border-radius: 4px;
+      transition: all 0.15s ease;
+    }
+
+    .download-btn:hover {
+      border-color: #1A1917;
+      background-color: #FFFFFF;
+    }
+
+    /* Divider with Dot */
+    .divider-wrap {
+      position: relative;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .divider-line {
+      height: 1px;
+      background-color: #DDD6CA;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      z-index: 1;
+    }
+
+    .divider-dot {
+      position: relative;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #FAF7F2;
+      border: 1px solid #DDD6CA;
+      width: 22px;
+      height: 22px;
+      color: #8C8479;
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    /* CV Header */
+    .cv-header {
+      margin-bottom: 40px;
+    }
+
+    .cv-header h1 {
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 1.2;
+      color: #11100E;
+      margin-bottom: 6px;
+    }
+
+    .cv-subtitle {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 14px;
+      color: #6E685F;
+      margin-bottom: 12px;
+    }
+
+    .cv-contact-line {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 13.5px;
+      color: #6E685F;
+    }
+
+    .cv-contact-line a {
+      color: #22201D;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .cv-contact-line span {
+      margin: 0 6px;
+      color: #DDD6CA;
+    }
+
+    /* Section Headings */
+    h2.section-heading {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 14px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #6E685F;
+      font-weight: 500;
+      margin-top: 44px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #E0D9CE;
+      padding-bottom: 8px;
+    }
+
+    /* Experience Items */
+    .job-item {
+      margin-bottom: 28px;
+    }
+
+    .job-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+
+    .job-title {
+      font-weight: 600;
+      color: #11100E;
+      font-size: 19px;
+    }
+
+    .job-date {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 13px;
+      color: #78716C;
+    }
+
+    .job-company {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 14px;
+      color: #0284C7;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    ul.job-details {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul.job-details li {
+      position: relative;
+      padding-left: 18px;
+      margin-bottom: 8px;
+      color: #2A2825;
+      font-size: 17.5px;
+    }
+
+    ul.job-details li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: #9C9488;
+    }
+
+    /* Skills & Certs lists */
+    .clean-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .clean-list li {
+      margin-bottom: 10px;
+      font-size: 17.5px;
+      color: #2A2825;
+    }
+
+    .clean-list strong {
+      color: #11100E;
+      font-weight: 600;
+    }
+
+    /* Bottom Nav */
+    .bottom-nav {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid #DDD6CA;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 36px 16px 70px;
+        font-size: 17.5px;
+      }
+      .cv-header h1 {
+        font-size: 27px;
+      }
+      .job-head {
+        flex-direction: column;
+        gap: 2px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="wrapper">
+    <!-- Top Nav with Back and Download -->
+    <nav class="top-nav">
+      <a href="index.html" class="back-link">← Mustafa Awad</a>
+      <a href="cv.pdf" class="download-btn" download="Mustafa_Awad_CV.pdf">Download PDF ↓</a>
+    </nav>
+
+    <!-- Line Divider -->
+    <div class="divider-wrap">
+      <div class="divider-line"></div>
+      <div class="divider-dot">·</div>
+    </div>
+
+    <!-- Header Block -->
+    <header class="cv-header">
+      <h1>Mustafa Awad</h1>
+      <div class="cv-subtitle">Senior System Administrator · Cloud &amp; Identity Engineer</div>
+      <div class="cv-contact-line">
+        <a href="mailto:Mustafa.awad@outlook.com">Mustafa.awad@outlook.com</a>
+        <span>·</span>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <span>·</span>
+        <a href="https://github.com/mustafawad" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </header>
+
+    <!-- Experience -->
+    <section>
+      <h2 class="section-heading">Professional Experience</h2>
+
+      <div class="job-item">
+        <div class="job-head">
+          <span class="job-title">Senior System Administrator</span>
+          <span class="job-date">Jan 2026 — Present</span>
+        </div>
+        <div class="job-company">Manaseer Information Technology</div>
+        <ul class="job-details">
+          <li>Recruited back to lead modern infrastructure transformations, aligning enterprise environments with Microsoft security baselines.</li>
+          <li>Architected and deployed hardened Linux (Ubuntu) environments for local AI workloads, running open-source LLMs with Ollama for internal business intelligence.</li>
+        </ul>
+      </div>
+
+      <div class="job-item">
+        <div class="job-head">
+          <span class="job-title">Microsoft 365 Identity Support Engineer</span>
+          <span class="job-date">Feb 2024 — Aug 2025</span>
+        </div>
+        <div class="job-company">Microsoft</div>
+        <ul class="job-details">
+          <li>Engineered identity solutions in Microsoft Entra ID (Azure AD), authoring Zero-Trust Conditional Access rules, MFA, and SSO integrations for high-volume enterprise clients.</li>
+          <li>Configured and troubleshot federation protocols (SAML, OAuth 2.0, OpenID Connect) and Entra Connect Pass-through Authentication.</li>
+          <li>Reduced privileged account attack vectors using Just-in-Time (JIT) access and Privileged Identity Management (PIM).</li>
+        </ul>
+      </div>
+
+      <div class="job-item">
+        <div class="job-head">
+          <span class="job-title">Senior System Administrator</span>
+          <span class="job-date">Mar 2018 — Feb 2024</span>
+        </div>
+        <div class="job-company">Manaseer Information Technology</div>
+        <ul class="job-details">
+          <li>Managed 100+ virtualized workloads, Windows Server clusters, and enterprise storage arrays.</li>
+          <li>Administered Exchange Online, SharePoint, and Teams while strengthening perimeter security via FortiGate firewalls.</li>
+        </ul>
+      </div>
+
+      <div class="job-item">
+        <div class="job-head">
+          <span class="job-title">IT Manager &amp; Network Specialist Roles</span>
+          <span class="job-date">2008 — 2016</span>
+        </div>
+        <div class="job-company">Al Ridwan Schools · Zarqa University Schools · Al Nahda Schools</div>
+        <ul class="job-details">
+          <li>Oversaw server upgrades, network infrastructure, campus-wide connectivity, and digital classroom rollouts.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Core Skills -->
+    <section>
+      <h2 class="section-heading">Technical Capabilities</h2>
+      <ul class="clean-list">
+        <li><strong>Identity &amp; Cloud:</strong> Microsoft Entra ID (Azure AD), Conditional Access, PIM, SSO (SAML/OAuth), MFA, Azure AD Connect, Azure Backup.</li>
+        <li><strong>Core Systems:</strong> Windows Server (2012–2022), Active Directory DS, Group Policy (GPO), DNS, DHCP, WSUS.</li>
+        <li><strong>Virtualization:</strong> Hyper-V Clusters, VMware ESXi, Proxmox VE.</li>
+        <li><strong>Security &amp; Networking:</strong> FortiGate Firewalls, SSL-VPN, VLANs, Routing/Switching, IPS/IDS.</li>
+        <li><strong>Linux &amp; AI:</strong> Ubuntu Server, Ollama, open-source LLMs, PowerShell Automation.</li>
+      </ul>
+    </section>
+
+    <!-- Certifications -->
+    <section>
+      <h2 class="section-heading">Licenses &amp; Certifications</h2>
+      <ul class="clean-list">
+        <li>Microsoft Certified: Azure Administrator Associate (AZ-104)</li>
+        <li>Microsoft Certified: Azure Fundamentals (AZ-900)</li>
+        <li>Cisco Certified Network Associate (CCNA)</li>
+        <li>Microsoft Certified Solutions Expert (MCSE)</li>
+        <li>Microsoft Certified Solutions Associate (MCSA)</li>
+        <li>Exchange Server 2019 Administration</li>
+      </ul>
+    </section>
+
+    <!-- Bottom Nav -->
+    <div class="bottom-nav">
+      <a href="index.html" class="back-link">← Back to Homepage</a>
+      <a href="cv.pdf" class="download-btn" download="Mustafa_Awad_CV.pdf">Download PDF ↓</a>
+    </div>
+  </main>
+
+</body>
+</html>
