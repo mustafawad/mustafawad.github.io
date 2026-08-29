@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mustafa Awad</title>
-  <meta name="description" content="Mustafa Awad — Senior System Administrator &amp; Infrastructure Engineer.">
+  <title>Mustafa Awad | Senior IT System Administrator</title>
+  <meta name="description" content="Mustafa Awad — Senior IT System Administrator specializing in enterprise infrastructure, Microsoft technologies, identity, virtualization, and security.">
   <meta name="author" content="Mustafa Awad">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Mustafa Awad">
-  <meta property="og:description" content="Mustafa Awad — Senior System Administrator, cloud identity engineer, and infrastructure builder.">
+  <meta property="og:title" content="Mustafa Awad | Senior IT System Administrator">
+  <meta property="og:description" content="Infrastructure · Identity · Virtualization · Security">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Newsreader & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;450;500;600&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -28,38 +28,59 @@
       background-color: #F5F2EB;
       color: #22201D;
       font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
-      font-size: 19.5px;
+      font-size: 19px;
       line-height: 1.8;
       -webkit-font-smoothing: antialiased;
-      padding: 60px 20px 100px;
+      padding: 60px 20px 120px;
     }
 
     .wrapper {
-      max-width: 580px;
+      max-width: 620px;
       margin: 0 auto;
     }
 
+    /* ---------- Header ---------- */
     .site-header {
       text-align: center;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .site-title {
       font-family: 'Newsreader', Georgia, serif;
-      font-size: 16.5px;
+      font-size: 24px;
       font-weight: 500;
-      letter-spacing: 0.38em;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
-      color: #1A1917;
+      color: #11100E;
       text-decoration: none;
       display: inline-block;
-      padding-left: 0.38em;
+      padding-left: 0.28em;
+      margin-bottom: 8px;
     }
 
+    .hero-role {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 19.5px;
+      font-style: italic;
+      color: #44403C;
+      margin-bottom: 8px;
+    }
+
+    .hero-tagline {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #78716C;
+      margin-bottom: 22px;
+      font-weight: 500;
+    }
+
+    /* ---------- Divider with Dot ---------- */
     .divider-wrap {
       position: relative;
       text-align: center;
-      margin-bottom: 38px;
+      margin: 32px 0 40px;
     }
 
     .divider-line {
@@ -87,12 +108,13 @@
       line-height: 1;
     }
 
+    /* ---------- Framed Portrait ---------- */
     .photo-frame {
       background: #FFFFFF;
       padding: 12px;
       border: 1px solid #E0D9CE;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-      margin: 0 auto 42px auto;
+      margin: 0 auto 38px auto;
       max-width: 480px;
     }
 
@@ -105,6 +127,7 @@
       background-color: #ECE7DE;
     }
 
+    /* ---------- Section Headings ---------- */
     .section-label {
       font-family: 'Newsreader', Georgia, serif;
       font-size: 13.5px;
@@ -112,12 +135,13 @@
       text-transform: uppercase;
       color: #6E685F;
       font-weight: 500;
-      margin-bottom: 24px;
+      margin: 44px 0 20px;
       padding-left: 0.32em;
     }
 
+    /* ---------- Prose ---------- */
     article p {
-      margin-bottom: 24px;
+      margin-bottom: 22px;
       color: #24221F;
       text-align: left;
     }
@@ -140,8 +164,141 @@
       text-decoration-color: #0284C7;
     }
 
+    /* ---------- Core Expertise ---------- */
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin: 20px 0 30px;
+    }
+
+    .expertise-group h3 {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 13.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #11100E;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .expertise-group p {
+      font-size: 17.5px;
+      color: #57534E;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    /* ---------- Experience Timeline ---------- */
+    .timeline {
+      margin: 20px 0 32px;
+      border-left: 1px solid #DDD6CA;
+      padding-left: 20px;
+    }
+
+    .tl-node {
+      position: relative;
+      margin-bottom: 22px;
+    }
+
+    .tl-node:last-child {
+      margin-bottom: 0;
+    }
+
+    .tl-node::before {
+      content: '';
+      position: absolute;
+      left: -25px;
+      top: 9px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #FAF7F2;
+      border: 1.5px solid #8C8479;
+    }
+
+    .tl-node.active::before {
+      background: #0284C7;
+      border-color: #0284C7;
+    }
+
+    .tl-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .tl-company {
+      font-size: 18.5px;
+      font-weight: 600;
+      color: #11100E;
+    }
+
+    .tl-year {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 12.5px;
+      color: #78716C;
+      font-weight: 500;
+    }
+
+    .tl-role {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 14px;
+      color: #0284C7;
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    /* ---------- Education & Certifications ---------- */
+    .edu-item {
+      margin-bottom: 18px;
+    }
+
+    .edu-degree {
+      font-weight: 600;
+      color: #11100E;
+      font-size: 18.5px;
+    }
+
+    .edu-school {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 13.5px;
+      color: #78716C;
+    }
+
+    .edu-cert-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 30px;
+    }
+
+    .edu-cert-list li {
+      font-size: 18px;
+      margin-bottom: 12px;
+      padding-left: 20px;
+      position: relative;
+      color: #2A2825;
+    }
+
+    .edu-cert-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: #8C8479;
+    }
+
+    /* ---------- Contact & Footer ---------- */
+    .contact-summary {
+      font-size: 18.5px;
+      color: #383531;
+      margin-bottom: 24px;
+      line-height: 1.75;
+    }
+
     .footer-links {
-      margin-top: 48px;
+      margin-top: 36px;
       padding-top: 24px;
       border-top: 1px solid #DDD6CA;
       font-size: 16.5px;
@@ -156,16 +313,19 @@
 
     @media (max-width: 600px) {
       body {
-        padding: 40px 18px 70px;
+        padding: 40px 18px 80px;
         font-size: 18px;
-        line-height: 1.74;
       }
       .photo-frame {
         padding: 8px;
       }
       .site-title {
-        font-size: 14.5px;
-        letter-spacing: 0.3em;
+        font-size: 20px;
+        letter-spacing: 0.22em;
+      }
+      .tl-head {
+        flex-direction: column;
+        gap: 0;
       }
     }
   </style>
@@ -173,45 +333,150 @@
 <body>
 
   <main class="wrapper">
+    
+    <!-- Header -->
     <header class="site-header">
-      <a href="index.html" class="site-title">Mustafa Awad</a>
+      <h1 class="site-title">Mustafa Awad</h1>
+      <div class="hero-role">Senior IT System Administrator</div>
+      <div class="hero-tagline">Infrastructure · Identity · Virtualization · Security</div>
     </header>
 
+    <!-- Line Divider -->
     <div class="divider-wrap">
       <div class="divider-line"></div>
       <div class="divider-dot">·</div>
     </div>
 
+    <!-- Framed Portrait -->
     <div class="photo-frame">
       <img src="profile.JPG" alt="Mustafa Awad">
     </div>
 
+    <!-- About Me -->
     <div class="section-label">About me</div>
 
     <article>
       <p>
-        I have spent more than twelve years working across the infrastructure that keeps organizations running, from Windows Server and Active Directory to virtualization, networking, security, and Microsoft 365. Today, at <strong>Manaseer Information Technology</strong>, I work on enterprise infrastructure while exploring practical ways to run open source AI locally, including Linux environments hosting large language models with <a href="https://ollama.com" target="_blank" rel="noopener noreferrer">Ollama</a>.
+        I am a Senior IT System Administrator with more than twelve years of experience working across enterprise IT infrastructure, with a focus on Microsoft technologies, Active Directory, virtualization, networking, security, Microsoft 365, and data protection.
       </p>
 
       <p>
-        My career began in education and corporate IT, where I worked with servers, networks, virtualization, and security systems. Over time, this led me to <strong>Microsoft</strong>, where I worked as a Microsoft 365 Identity Support Engineer. My work there focused on Microsoft Entra ID, Conditional Access, authentication protocols such as SAML and OAuth, identity governance, and hybrid identity in enterprise environments.
+        My career began in education and corporate IT, where I worked with servers, networks, virtualization, and security systems. Over time, this experience led me to <strong>Microsoft</strong>, where I worked as a Microsoft 365 Identity Support Engineer, focusing on Microsoft Entra ID, Conditional Access, authentication, identity governance, and hybrid identity in enterprise environments.
       </p>
 
       <p>
-        I have always been interested in how systems work and, more importantly, how to make them reliable. For me, good infrastructure is not just about keeping systems running. It is about building environments that are secure, resilient, recoverable, and manageable when something goes wrong.
+        I believe good infrastructure should be reliable, secure, and resilient. My approach is practical and methodical: understand how systems work, identify weaknesses, and build solutions that remain manageable and recoverable when things go wrong.
       </p>
 
       <p>
-        Alongside infrastructure administration, I use <a href="https://github.com/mustafawad/activeDirectory" target="_blank" rel="noopener noreferrer">PowerShell</a> and Python to automate repetitive tasks and improve operational efficiency. More recently, I have been exploring self hosted AI and open source LLMs, with a particular interest in how they can be applied within controlled enterprise environments.
-      </p>
-
-      <p>
-        My certifications include <a href="https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator/" target="_blank" rel="noopener noreferrer">Microsoft Azure Administration</a>, Cisco CCNA, and Microsoft MCSE. My interests continue to sit at the intersection of infrastructure, identity, automation, and AI.
+        Today, I continue to work with enterprise infrastructure at <strong>Manaseer Information Technology</strong> while exploring new technologies, including self hosted Linux environments for running open source LLMs with <a href="https://ollama.com" target="_blank" rel="noopener noreferrer">Ollama</a>.
       </p>
     </article>
 
+    <!-- Core Expertise -->
+    <div class="section-label">Core Expertise</div>
+
+    <div class="expertise-grid">
+      <div class="expertise-group">
+        <h3>Microsoft &amp; Identity</h3>
+        <p>Windows Server · Active Directory · Microsoft Entra ID · Microsoft 365 · Exchange Online · Conditional Access · Hybrid Identity</p>
+      </div>
+
+      <div class="expertise-group">
+        <h3>Infrastructure &amp; Virtualization</h3>
+        <p>Hyper V · VMware ESXi · Proxmox · Failover Clustering · Enterprise Servers · SAN &amp; NAS</p>
+      </div>
+
+      <div class="expertise-group">
+        <h3>Networking &amp; Security</h3>
+        <p>DNS · DHCP · Group Policy (GPO) · FortiGate · Network Security · Endpoint Security</p>
+      </div>
+
+      <div class="expertise-group">
+        <h3>Backup &amp; Recovery</h3>
+        <p>Veeam Backup &amp; Replication · Disaster Recovery · Business Continuity</p>
+      </div>
+    </div>
+
+    <!-- Experience Timeline -->
+    <div class="section-label">Experience</div>
+
+    <div class="timeline">
+      <div class="tl-node active">
+        <div class="tl-head">
+          <span class="tl-company">Manaseer Information Technology</span>
+          <span class="tl-year">2026 — Present</span>
+        </div>
+        <div class="tl-role">Senior System Administrator</div>
+      </div>
+
+      <div class="tl-node">
+        <div class="tl-head">
+          <span class="tl-company">Microsoft</span>
+          <span class="tl-year">2024 — 2025</span>
+        </div>
+        <div class="tl-role">Microsoft 365 Identity Support Engineer</div>
+      </div>
+
+      <div class="tl-node">
+        <div class="tl-head">
+          <span class="tl-company">Manaseer Information Technology</span>
+          <span class="tl-year">2018 — 2024</span>
+        </div>
+        <div class="tl-role">Senior System Administrator</div>
+      </div>
+
+      <div class="tl-node">
+        <div class="tl-head">
+          <span class="tl-company">Al Ridwan Schools</span>
+          <span class="tl-year">2015 — 2016</span>
+        </div>
+        <div class="tl-role">Senior IT Specialist</div>
+      </div>
+
+      <div class="tl-node">
+        <div class="tl-head">
+          <span class="tl-company">Zarqa University Schools</span>
+          <span class="tl-year">2013 — 2014</span>
+        </div>
+        <div class="tl-role">IT Manager &amp; Network Administrator</div>
+      </div>
+
+      <div class="tl-node">
+        <div class="tl-head">
+          <span class="tl-company">Al Nahda Private Schools</span>
+          <span class="tl-year">2008 — 2012</span>
+        </div>
+        <div class="tl-role">IT Specialist</div>
+      </div>
+    </div>
+
+    <!-- Education & Certifications -->
+    <div class="section-label">Education &amp; Certifications</div>
+
+    <div class="edu-item">
+      <div class="edu-degree">Bachelor of Computer Science</div>
+      <div class="edu-school">Al Zarqa Private University, Jordan · 2006</div>
+    </div>
+
+    <ul class="edu-cert-list">
+      <li>Microsoft Certified: Azure Administrator Associate (AZ-104)</li>
+      <li>Microsoft Certified: Azure Fundamentals (AZ-900)</li>
+      <li>Cisco Certified Network Associate (CCNA)</li>
+      <li>Microsoft Certified Solutions Expert (MCSE)</li>
+      <li>Microsoft Certified Solutions Associate (MCSA)</li>
+      <li>Microsoft Exchange Server 2019</li>
+    </ul>
+
+    <!-- Contact & Footer -->
+    <div class="section-label">Contact</div>
+
+    <p class="contact-summary">
+      I work across enterprise infrastructure, Microsoft technologies, identity, virtualization, networking, and security, with a continuing interest in building reliable and practical technology solutions.
+    </p>
+
     <footer class="footer-links">
-      <a href="mailto:Mustafa.awad@outlook.com">Mustafa.awad@outlook.com</a>
+      <a href="mailto:Mustafa.awad@outlook.com">Email</a>
       <span>·</span>
       <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <span>·</span>
@@ -219,6 +484,7 @@
       <span>·</span>
       <a href="cv.html">CV</a>
     </footer>
+
   </main>
 
 </body>
